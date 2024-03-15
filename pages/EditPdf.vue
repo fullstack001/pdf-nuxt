@@ -111,7 +111,6 @@ export default {
   mounted() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
-    this.$swal("Server Error!", "Please check your Network.", "Warning");
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.handleResize);
@@ -181,15 +180,18 @@ export default {
             down_name: "edited_pdf.pdf",
             file_type: "application/pdf",
             before: "editpdf",
-          };
+          }; 
+          const encrypted = this.$crypto.AES.encrypt(
+            JSON.stringify(obj),
+            "secret"
+          ).toString(); 
+          // const encrypted = this.$encrypt(obj);
 
-          const encrypted = this.$encrypt(obj);
-console.log('aaaaaaaaaaaaaaaaaaaaaaa')
           this.$router.push({
-            name:
-              this.$route.params.locale == undefined
-                ? "download"
-                : "en_download",
+            path: "download",
+            // this.$route.params.locale == undefined
+            //   ? "download"
+            //   : "en_download",
             params: {
               param: encrypted,
             },
