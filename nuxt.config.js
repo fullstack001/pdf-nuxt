@@ -1,4 +1,6 @@
-import colors from 'vuetify/es5/util/colors'
+ import colors from 'vuetify/es5/util/colors'
+import {   I18N } from './config'
+ 
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -22,13 +24,17 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@fortawesome/fontawesome-free/css/all.css',
-    '~/assets/scss/material-dashboard.scss'
+    '~/assets/scss/material-dashboard.scss',
+    '@mdi/font/css/materialdesignicons.min.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [ 
     { src: '~/plugins/crypto.js', mode: 'client' },
-    '~/plugins/vue-i18n.js','~/plugins/vue-material.js'],
+    //   '~/plugins/vue-i18n.js',
+ '~/plugins/vue-material.js',
+ { src: '~/plugins/rating.js', ssr: false }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,6 +48,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    ['nuxt-i18n', I18N],
      '@nuxtjs/axios',
      'nuxt-sweetalert2',
      'vue-sweetalert2/nuxt'

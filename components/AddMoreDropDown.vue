@@ -11,7 +11,7 @@
         v-if="pdfCounts > 0"
       >
         <md-speed-dial-target class="add_button">
-          <md-icon color="#000">add</md-icon>
+          <i class="fa fa-plus" aria-hidden="true"></i>
           <md-tooltip md-direction="left"
             >{{ $t("toolTip.add_more") }}
           </md-tooltip>
@@ -23,7 +23,7 @@
 
       <md-speed-dial-content>
         <md-button class="md-icon-button" @click="open_add_local">
-          <md-icon>computer</md-icon>
+          <i class="fa fa-laptop" aria-hidden="true"></i>
           <md-tooltip md-direction="right"
             >{{ $t("toolTip.upload_local") }}
           </md-tooltip>

@@ -12,6 +12,7 @@
     "@ckeditor/ckeditor5-build-classic": "^41.1.0",
     "@ckeditor/ckeditor5-vue2": "^3.0.1",
     "@fortawesome/fontawesome-free": "^6.5.1",
+    "@mdi/font": "^7.4.47",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/i18n": "^8.1.1",
     "@syncfusion/ej2-vue-inputs": "^24.1.45",
@@ -36,6 +37,7 @@
     "mammoth": "^1.6.0",
     "mdb-vue-ui-kit": "^4.1.1",
     "nuxt": "^2.15.8",
+    "nuxt-i18n": "^6.28.1",
     "nuxt-sweetalert2": "^1.0.0",
     "pdf-lib": "^1.17.1",
     "pdf2pic": "^3.1.1",
@@ -75,6 +77,7 @@
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/vuetify": "^1.12.3",
+    "nuxt-mdi": "^1.1.6"
   }
 }

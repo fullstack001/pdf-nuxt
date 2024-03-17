@@ -4,14 +4,14 @@
       <div class="solution-header">
         {{ $t("page_titles.landing.section1.title") }}
       </div>
-      <div class="md-layout">
+      <div class="md-laydout">
         <div
-          class="md-layout-item blog-panel"
+          class="blog-panel md-layout-item"
           v-for="blog in blogs"
           :key="blog._id"
           @click="goBlogDetail(blog.title, blog._id)"
         >
-          <md-card class="blog-body">
+          <div class="blog-body">
             <md-card-media>
               <img class="blog_img" :src="blog.img" alt="People" />
               <div class="card-tip">
@@ -33,8 +33,9 @@
                 v-html="blog.content.substring(0, 120)"
               ></div>
             </md-card-header>
-          </md-card>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -129,7 +130,7 @@ export default {
   font-weight: 600;
 }
 .md-card .md-card-header {
-  margin: -20px 15px 0;
+  margin: 0px 15px 0;
   border-radius: 3px;
   padding: 15px;
 }

@@ -10,7 +10,7 @@
       v-if="page_load == 'uploading'"
     />
     <div v-if="file && page_load == 'default'">
-       <SignComponent
+      <SignComponent
         :pdfUrl="getURL(file)"
         :get_pdf="get_result"
         :currentPage="currentPageNum"
@@ -18,7 +18,7 @@
         @upload="upload_png"
         :sign_obj="sign_obj"
         @editSign="modalValidate = true"
-      /> 
+      />
     </div>
     <input
       type="file"
@@ -39,20 +39,20 @@
       :title="$t('page_titles.sign_page.title')"
       :description="$t('page_titles.sign_page.description')"
       :featureImgUrl="svgUrl"
-    /> 
+    />
 
-     <SignatureModal
+    <SignatureModal
       v-if="modalValidate"
       :nameProps="sign_name"
       @close="set_sign_items"
-    />  
+    />
   </div>
 </template>
 
 <script>
 import generateURL from "@/services/generateURL";
- import SignatureModal from "@/components/SignatureModal.vue";
-  import SignComponent from "@/components/SignComponent.vue";
+import SignatureModal from "@/components/SignatureModal.vue";
+import SignComponent from "@/components/SignComponent.vue";
 import addImagesToPDF1 from "@/services/add_img_to_pdf1";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
@@ -89,9 +89,9 @@ export default {
   },
   mixins: [fileHandlingMixin],
   components: {
-  SignComponent,
+    SignComponent,
     SignatureModal,
-  SelectFileComponent,
+    SelectFileComponent,
     Processing,
     Uploading,
   },
@@ -199,14 +199,17 @@ export default {
             file_type: "application/pdf",
             before: "signpdf",
           };
-
-          const encrypted = this.$encrypt(obj);
+          const encrypted = this.$crypto.AES.encrypt(
+            JSON.stringify(obj),
+            "mySecretKey123"
+          ).toString();
+          //const encrypted = this.$encrypt(obj);
           this.$router.push({
-            name:
-              this.$route.params.locale == undefined
-                ? "download"
-                : "en_download",
-            params: {
+            path: "download",
+            // this.$route.params.locale == undefined
+            //   ? "download"
+            //   : "en_download",
+            query: {
               param: encrypted,
             },
           });

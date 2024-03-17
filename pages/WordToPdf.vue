@@ -250,14 +250,17 @@ export default {
             before: "wordtopdf",
           };
 
-          const encrypted = this.$encrypt(obj);
-
+          //const encrypted = this.$encrypt(obj);
+          const encrypted = this.$crypto.AES.encrypt(
+            JSON.stringify(obj),
+            "mySecretKey123"
+          ).toString();
           this.$router.push({
-            name:
-              this.$route.params.locale == undefined
-                ? "download"
-                : "en_download",
-            params: {
+            path: "download",
+            // this.$route.params.locale == undefined
+            //   ? "download"
+            //   : "en_download",
+            query: {
               param: encrypted,
             },
           });

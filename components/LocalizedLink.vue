@@ -14,14 +14,19 @@ export default {
         return this.to;
       }
 
-      const locale = this.$route.params.locale;
+      //const locale = this.$route.params.locale;
+      
+      let locale = this.$route.name.split("___")[1];
+       
+      if(locale === "en") locale = null
       // we strip leading and trailing slashes and prefix
 
       // the current locale
       const path =
-        locale === undefined
+        !locale  
           ? `/${this.to.replace(/^\/|\/$/g, "")}`
           : `/${locale}/${this.to.replace(/^\/|\/$/g, "")}`;
+          
       return path;
     },
   },

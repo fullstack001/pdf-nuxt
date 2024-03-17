@@ -183,7 +183,7 @@ export default {
           }; 
           const encrypted = this.$crypto.AES.encrypt(
             JSON.stringify(obj),
-            "secret"
+            "mySecretKey123"
           ).toString(); 
           // const encrypted = this.$encrypt(obj);
 
@@ -192,7 +192,7 @@ export default {
             // this.$route.params.locale == undefined
             //   ? "download"
             //   : "en_download",
-            params: {
+            query: {
               param: encrypted,
             },
           });

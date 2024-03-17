@@ -16,10 +16,12 @@
     <div class="download_btn">
       <a id="link" class="download__btn md-raised md-danger">
         Download
-        <span class="material-icons" style="margin-left: 10px">
+        <!-- <span class="material-icons" style="margin-left: 10px">
           arrow_circle_down
-        </span>
+        </span> -->
+        <i class="fa fa-download"  style="margin-left: 10px" aria-hidden="true"></i>
       </a>
+
       <div class="continue">
         <div>
           <md-dialog-confirm
@@ -44,7 +46,7 @@
           />
 
           <md-button class="md-icon-button" @click="calc_del_time">
-            <md-icon>delete</md-icon>
+            <i class="fa fa-trash" aria-hidden="true"></i>
             <md-tooltip md-direction="top">Delete it now</md-tooltip>
           </md-button>
           <GDriveSelector
@@ -66,7 +68,8 @@
             class="md-icon-button download-more"
             @click="showDialog = true"
           >
-            <md-icon>link</md-icon>
+            <!-- <md-icon>link</md-icon> -->
+            <i class="fa fa-link" aria-hidden="true"></i>
             <md-tooltip md-direction="bottom"
               >Share file link or QRcode</md-tooltip
             >
@@ -103,11 +106,17 @@
           {{ $t("page_titles.merge_page.rateSection.title") }}
         </div>
         <div class="rate-star">
+          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
+          <i class="fa fa-star-o" style="color: #ff7c03;" aria-hidden="true"></i>
+        
+          <!-- <span class="material-icons">star</span>
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
-          <span class="material-icons">star</span>
-          <span class="material-icons">star_outline</span>
+          <span class="material-icons">star_outline</span> -->
         </div>
         <div class="rate-reviews">
           <span class="rate-score"> 4.8/5 - </span>
@@ -169,13 +178,13 @@
       </md-dialog>
     </div>
     <div class="chart_area">
-     <Chart
+      <Chart
         :resultSize="Number(reSize)"
         :originSize="Number(originSize)"
         v-show="before == 'compresspdf'"
-      />  
+      />
     </div>
-   <SetRate />  
+    <SetRate />
   </div>
 </template>
 <script>
@@ -183,17 +192,17 @@
 //  import CryptoJS from "crypto-js";
 import VueDropboxPicker from "@/components/DropboxPicker.vue";
 import JSZip from "jszip";
- //import VueQRCodeComponent from "vue-qrcode-component";
+//import VueQRCodeComponent from "vue-qrcode-component";
 import Chart from "@/components/Chart.vue"; // Replace with the correct path
 import GDriveSelector from "@/components/GDriveSelector.vue";
- import SetRate from "@/components/SetRate.vue";
+import SetRate from "@/components/SetRate.vue";
 //Vue.component("qr-code", VueQRCodeComponent);
 
 export default {
   components: {
     VueDropboxPicker,
     GDriveSelector,
-   Chart,
+    Chart,
     SetRate,
   },
   props: {
@@ -248,31 +257,33 @@ export default {
       return store.state.result;
     },
   },
-  created() {
+  created() {},
+  mounted() {
+    console.log(this.$crypto.AES);
     //this.download_urls = window.location.origin + this.$route.path;
     // // Your secret key (should be kept private)
-    // const secretKey = "mySecretKey123";
+    const secretKey = "mySecretKey123";
 
     // // Decrypt the encrypted message using the same secret key
-    // const decrypted = CryptoJS.AES.decrypt(
-    //   this.$route.params.param,
-    //   secretKey
-    // ).toString(CryptoJS.enc.Utf8);
-    // const paramObj = JSON.parse(decrypted);
-    // this.id = paramObj.id;
-    // this.button_title = paramObj.button_title;
-    // this.dis_text = paramObj.dis_text;
-    // this.down_name = paramObj.down_name;
-    // this.file_type = paramObj.file_type;
-    // this.before = paramObj.before;
-    // this.originSize = paramObj.originSize;
-    // this.reSize = paramObj.resultSize;
-    // this.downloadURL = `/pdf/download/${this.id}`;
-  },
-  mounted() {
- //   this.checkFile();
-    // Make a GET request to the server endpoint to download the file
-    console.log(this.$router.url);
+
+    const decrypted = this.$crypto.AES.decrypt(
+      this.$route.query.param,
+      secretKey
+    ).toString(this.$crypto.enc.Utf8);
+    console.log("after dec");
+    console.log(decrypted);
+    const paramObj = JSON.parse(decrypted);
+    this.id = paramObj.id;
+    this.button_title = paramObj.button_title;
+    this.dis_text = paramObj.dis_text;
+    this.down_name = paramObj.down_name;
+    this.file_type = paramObj.file_type;
+    this.before = paramObj.before;
+    this.originSize = paramObj.originSize;
+    this.reSize = paramObj.resultSize;
+    this.downloadURL = `/pdf/download/${this.id}`;
+    this.checkFile();
+ 
   },
   methods: {
     checkFile() {

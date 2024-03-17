@@ -3,7 +3,7 @@
     <h2 class="title">Please rate this app</h2>
     <div class="content container">
       <div class="stars">
-        <!-- <star-rating
+        <star-rating
           :increment="0.5"
           :border-width="4"
           :star-size="30"
@@ -16,10 +16,11 @@
           ]"
           :show-rating="false"
           @rating-selected="setRating"
-        ></star-rating> -->
+        ></star-rating> 
+        <!-- <star-rating v-model="rating" :increment="0.5" :star-size="24"></star-rating> -->
       </div>
       <div>
-        <textarea
+        <textarea style="border:1px solid ; border-radius: 5px ;"
           name="reviewText"
           placeholder="Your impressions and thoughts. Please rate fairly."
           autocomplete="off"
@@ -47,7 +48,7 @@
   </div>
 </template>
 <script>
-//import StarRating from "vue-star-rating";
+ //import StarRating from "vue-star-rating";
 
 export default {
   components: {
