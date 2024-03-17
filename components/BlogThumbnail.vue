@@ -4,7 +4,7 @@
       <div class="solution-header">
         {{ $t("page_titles.landing.section1.title") }}
       </div>
-      <div class="md-laydout">
+      <div class="md-layout">
         <div
           class="blog-panel md-layout-item"
           v-for="blog in blogs"
