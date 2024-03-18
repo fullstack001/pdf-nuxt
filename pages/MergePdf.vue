@@ -236,30 +236,32 @@ import MergeDesription from "@/components/MergeDesription.vue";
 import SvgImage from "@/assets/feature_img/merge_pdf.svg";
 
 export default {
-  metaInfo: {
-    title: "Merge PDF - Combine PDF Files for Free",
+  head() {
+    return {
+      title: "Merge PDF - Combine PDF Files for Free",
 
-    meta: [
-      {
-        name: "Keywords",
-        content:
-          "PDF merge, merge PDF, merge PDF online, combine PDF files, merge multiple PDFs, PDF merger, online PDF merge, merge PDF documents, merge PDF pages, PDF file merge, combine PDF pages",
-      },
-      {
-        name: "description",
-        content:
-          "Merge PDF files easily with our PDF combiner. Combine multiple PDFs into a single document online. Fast, secure, and user-friendly PDF merge tool for your convenience.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Merge PDF files easily with our PDF combiner. Combine multiple PDFs into a single document online. Fast, secure, and user-friendly PDF merge tool for your convenience.",
-      },
-      {
-        property: "og:title",
-        content: "Merge PDF - Combine PDF Files for Free",
-      },
-    ],
+      meta: [
+        {
+          name: "Keywords",
+          content:
+            "PDF merge, merge PDF, merge PDF online, combine PDF files, merge multiple PDFs, PDF merger, online PDF merge, merge PDF documents, merge PDF pages, PDF file merge, combine PDF pages",
+        },
+        {
+          name: "description",
+          content:
+            "Merge PDF files easily with our PDF combiner. Combine multiple PDFs into a single document online. Fast, secure, and user-friendly PDF merge tool for your convenience.",
+        },
+        {
+          property: "og:description",
+          content:
+            "Merge PDF files easily with our PDF combiner. Combine multiple PDFs into a single document online. Fast, secure, and user-friendly PDF merge tool for your convenience.",
+        },
+        {
+          property: "og:title",
+          content: "Merge PDF - Combine PDF Files for Free",
+        },
+      ],
+    };
   },
   mixins: [fileHandlingMixin],
   components: {
@@ -436,7 +438,7 @@ export default {
           const encrypted = this.$crypto.AES.encrypt(
             JSON.stringify(obj),
             "mySecretKey123"
-          ).toString(); 
+          ).toString();
           // const encrypted = this.$encrypt(obj);
 
           this.$router.push({

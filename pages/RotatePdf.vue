@@ -595,29 +595,32 @@ import SvgImage from "@/assets/feature_img/rotate_pdf.svg";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 
 export default {
-  metaInfo: {
-    title: "Rotate PDF – Rotate PDF Pages for Free | Online PDF Rotator ",
-    meta: [
-      {
-        name: "Keywords",
-        content:
-          "Rotate PDF, rotate PDF pages, online PDF rotation, adjust PDF orientation, rotate PDF online, PDF page rotation",
-      },
-      {
-        name: "description",
-        content:
-          "Rotate PDF pages effortlessly with our PDF rotator. This online PDF rotation tool provides a quick and easy way to adjust the orientation of pages in your PDF files.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Rotate PDF pages effortlessly with our PDF rotator. This online PDF rotation tool provides a quick and easy way to adjust the orientation of pages in your PDF files.",
-      },
-      {
-        property: "og:title",
-        content: "Rotate PDF – Rotate PDF Pages for Free | Online PDF Rotator",
-      },
-    ],
+  head() {
+    return {
+      title: "Rotate PDF – Rotate PDF Pages for Free | Online PDF Rotator ",
+      meta: [
+        {
+          name: "Keywords",
+          content:
+            "Rotate PDF, rotate PDF pages, online PDF rotation, adjust PDF orientation, rotate PDF online, PDF page rotation",
+        },
+        {
+          name: "description",
+          content:
+            "Rotate PDF pages effortlessly with our PDF rotator. This online PDF rotation tool provides a quick and easy way to adjust the orientation of pages in your PDF files.",
+        },
+        {
+          property: "og:description",
+          content:
+            "Rotate PDF pages effortlessly with our PDF rotator. This online PDF rotation tool provides a quick and easy way to adjust the orientation of pages in your PDF files.",
+        },
+        {
+          property: "og:title",
+          content:
+            "Rotate PDF – Rotate PDF Pages for Free | Online PDF Rotator",
+        },
+      ],
+    };
   },
   mixins: [fileHandlingMixin],
   components: {
@@ -935,7 +938,7 @@ export default {
           const encrypted = this.$crypto.AES.encrypt(
             JSON.stringify(obj),
             "mySecretKey123"
-          ).toString(); 
+          ).toString();
           //const encrypted = this.$encrypt(obj);
 
           this.$router.push({
@@ -1001,15 +1004,15 @@ export default {
 
               //const encrypted = this.$encrypt(obj);
               const encrypted = this.$crypto.AES.encrypt(
-            JSON.stringify(obj),
-            "mySecretKey123"
-          ).toString(); 
+                JSON.stringify(obj),
+                "mySecretKey123"
+              ).toString();
               this.$router.push({
                 path: "download",
-            // this.$route.params.locale == undefined
-            //   ? "download"
-            //   : "en_download",
-            query: {
+                // this.$route.params.locale == undefined
+                //   ? "download"
+                //   : "en_download",
+                query: {
                   param: encrypted,
                 },
               });

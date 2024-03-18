@@ -77,7 +77,7 @@
                   style="
                     min-width: 38px;
                     font-weight: 600 !important;
-                    font-family: 'Montserrat';
+                    font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif
                   "
                 >
                   {{ $t("other_features.convert_pdf.title") }}

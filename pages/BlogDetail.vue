@@ -96,7 +96,7 @@ export default {
     BlogThumbnail,
   },
   created() {
-    this.fetchBlogs(this.$route.params.title);
+    this.fetchBlogs(this.$route.query.title);
   },
   data() {
     return {
@@ -106,7 +106,7 @@ export default {
     };
   },
   watch: {
-    "$route.params.title": function (newTitle, oldTitle) {
+    "$route.query.title": function (newTitle, oldTitle) {
       // Handle the change of params.title here
       this.fetchBlogs(newTitle);
     },
@@ -219,7 +219,7 @@ export default {
   margin: 0px 10px;
 }
 .blog-address span {
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -232,7 +232,7 @@ export default {
   padding-left: 100px;
 }
 .blog-date {
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 24px;
   font-weight: 500;
   line-height: 46px;
@@ -240,7 +240,7 @@ export default {
   margin-top: 20px;
 }
 .blog-title {
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 45px;
   font-weight: 700;
   line-height: 61px;
@@ -291,7 +291,7 @@ export default {
   padding: 15px 10px;
   border-radius: 9px;
   position: absolute;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;

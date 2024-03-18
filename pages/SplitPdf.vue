@@ -234,7 +234,10 @@ import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/split_pdf.svg";
 
 export default {
-  metaInfo: {
+  head() {
+    
+  
+  return {
     title: "Split PDF – Separate Pages in your PDF File for Free",
 
     meta: [
@@ -258,7 +261,8 @@ export default {
         content: "Split PDF – Separate Pages in your PDF File for Free",
       },
     ],
-  },
+  }
+},
   mixins: [fileHandlingMixin],
   components: {
     PdfViewer,
