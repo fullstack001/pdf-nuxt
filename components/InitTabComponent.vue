@@ -164,12 +164,14 @@
 </template>
 <script>
 //import VueDrawingCanvas from "vue-drawing-canvas";
+//import VueDrawingCanvas from "vue-drawing-canvas/dist/vue-drawing-canvas.esm";
+
 import html2canvas from "html2canvas";
 import DropFile from "./DropFile.vue";
 
 export default {
   components: {
-   // VueDrawingCanvas,
+  // VueDrawingCanvas,
     DropFile,
   },
   props: ["name", "get_init"],

@@ -61,32 +61,34 @@ import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/edit_pdf.svg";
 export default {
-  metaInfo: {
-    title:
-      "Edit PDF – Easily Edit your PDF Files for Free | Online PDF Editor & Form Filler",
+  head() {
+    return {
+      title:
+        "Edit PDF – Easily Edit your PDF Files for Free | Online PDF Editor & Form Filler",
 
-    meta: [
-      {
-        name: "Keywords",
-        content:
-          "Edit PDF, online PDF editor, PDF editing tool, modify PDF, edit text in PDF, add images to PDF, PDF document editor, pdf form filler, pdf filler",
-      },
-      {
-        name: "description",
-        content:
-          "Edit PDF documents easily with our PDF editor. This online PDF editing tool provides a user-friendly and intuitive platform to make changes to your PDF files.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Edit PDF documents easily with our PDF editor. This online PDF editing tool provides a user-friendly and intuitive platform to make changes to your PDF files.",
-      },
-      {
-        property: "og:title",
-        content:
-          "Edit PDF – Easily Edit your PDF Files for Free | Online PDF Editor & Form Filler",
-      },
-    ],
+      meta: [
+        {
+          name: "Keywords",
+          content:
+            "Edit PDF, online PDF editor, PDF editing tool, modify PDF, edit text in PDF, add images to PDF, PDF document editor, pdf form filler, pdf filler",
+        },
+        {
+          name: "description",
+          content:
+            "Edit PDF documents easily with our PDF editor. This online PDF editing tool provides a user-friendly and intuitive platform to make changes to your PDF files.",
+        },
+        {
+          property: "og:description",
+          content:
+            "Edit PDF documents easily with our PDF editor. This online PDF editing tool provides a user-friendly and intuitive platform to make changes to your PDF files.",
+        },
+        {
+          property: "og:title",
+          content:
+            "Edit PDF – Easily Edit your PDF Files for Free | Online PDF Editor & Form Filler",
+        },
+      ],
+    };
   },
 
   mixins: [fileHandlingMixin],
@@ -180,11 +182,11 @@ export default {
             down_name: "edited_pdf.pdf",
             file_type: "application/pdf",
             before: "editpdf",
-          }; 
+          };
           const encrypted = this.$crypto.AES.encrypt(
             JSON.stringify(obj),
             "mySecretKey123"
-          ).toString(); 
+          ).toString();
           // const encrypted = this.$encrypt(obj);
 
           this.$router.push({

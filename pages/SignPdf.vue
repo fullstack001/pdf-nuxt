@@ -41,11 +41,11 @@
       :featureImgUrl="svgUrl"
     />
 
-    <SignatureModal
+     <SignatureModal
       v-if="modalValidate"
       :nameProps="sign_name"
       @close="set_sign_items"
-    />
+    />  
   </div>
 </template>
 
@@ -61,8 +61,9 @@ import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/sign_pdf.svg";
 export default {
-  metaInfo: {
-    title:
+  head() {
+    return {
+      title:
       "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
     meta: [
       {
@@ -86,11 +87,12 @@ export default {
           "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
       },
     ],
-  },
+    }
+  } ,
   mixins: [fileHandlingMixin],
   components: {
     SignComponent,
-    SignatureModal,
+   // SignatureModal,
     SelectFileComponent,
     Processing,
     Uploading,

@@ -41,29 +41,31 @@
 <script>
 import { getDate, getMonth } from "@/services/getDateMonth";
 export default {
-  metaInfo: {
-    title: "PDFden Blog: Explore Insights on PDF Tools, Tips, and More",
-    meta: [
-      {
-        name: "Keywords",
-        content:
-          "PDFden Blog, PDF tools, PDF tips, PDF insights, document management, PDF conversion, PDF editing, PDF compression, online tools, technology blog",
-      },
-      {
-        name: "description",
-        content:
-          "Discover the latest insights, tips, and news on PDF tools at our blog. Explore a variety of articles covering PDF merge, splitting, conversion, editing, compression, and other helpful topics. ",
-      },
-      {
-        property: "og:description",
-        content:
-          "Discover the latest insights, tips, and news on PDF tools at our blog. Explore a variety of articles covering PDF merge, splitting, conversion, editing, compression, and other helpful topics.",
-      },
-      {
-        property: "og:title",
-        content: "PDFden Blog: Explore Insights on PDF Tools, Tips, and More",
-      },
-    ],
+  head() {
+    return {
+      title: "PDFden Blog: Explore Insights on PDF Tools, Tips, and More",
+      meta: [
+        {
+          name: "Keywords",
+          content:
+            "PDFden Blog, PDF tools, PDF tips, PDF insights, document management, PDF conversion, PDF editing, PDF compression, online tools, technology blog",
+        },
+        {
+          name: "description",
+          content:
+            "Discover the latest insights, tips, and news on PDF tools at our blog. Explore a variety of articles covering PDF merge, splitting, conversion, editing, compression, and other helpful topics. ",
+        },
+        {
+          property: "og:description",
+          content:
+            "Discover the latest insights, tips, and news on PDF tools at our blog. Explore a variety of articles covering PDF merge, splitting, conversion, editing, compression, and other helpful topics.",
+        },
+        {
+          property: "og:title",
+          content: "PDFden Blog: Explore Insights on PDF Tools, Tips, and More",
+        },
+      ],
+    };
   },
   props: ["routing"],
   data() {
@@ -82,8 +84,8 @@ export default {
     setDate(data) {
       return getDate(data);
     },
-   async  fetchBlog() {
-     await this.$axios
+    async fetchBlog() {
+      await this.$axios
         .get("/pdf/allBlogs")
         .then((res) => {
           this.blogs = res.data;
@@ -92,12 +94,23 @@ export default {
     },
     goBlogDetail(title, id) {
       const modifiedTitle = title.replace(/ /g, "-");
-      this.$router.replace({
-        name:
-          this.$route.params.locale == undefined
-            ? "blogDetail"
-            : "en_blogDetail",
-        params: {
+      // this.$router.replace({
+      //   name:
+      //     this.$route.params.locale == undefined
+      //       ? "blogDetail"
+      //       : "en_blogDetail",
+      //   params: {
+      //     title: modifiedTitle,
+      //     id: id,
+      //   },
+      // });
+
+      this.$router.push({
+        path: "/blogDetail",
+        // this.$route.params.locale == undefined
+        //   ? "download"
+        //   : "en_download",
+        query: {
           title: modifiedTitle,
           id: id,
         },
