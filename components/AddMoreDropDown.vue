@@ -75,7 +75,6 @@ export default {
   }),
   methods: {
     open_add_local() {
-      alert("open_add_local");
       this.$emit("open_add_local");
     },
     onPickedGoogleDriver(data) {
@@ -163,5 +162,8 @@ h3 {
 }
 .md-button {
   margin: 5px 0 !important;
+}
+.md-speed-dial.md-top-left {
+  left: 61px !important;
 }
 </style>

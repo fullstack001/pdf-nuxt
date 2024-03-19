@@ -171,7 +171,7 @@ import DropFile from "./DropFile.vue";
 
 export default {
   components: {
-  // VueDrawingCanvas,
+    // VueDrawingCanvas,
     DropFile,
   },
   props: ["name", "get_init"],

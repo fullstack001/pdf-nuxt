@@ -17,7 +17,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
   loading: {
@@ -35,10 +35,12 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/crypto.js', mode: 'client' },
+    { src: '~/plugins/vue-drawing-canvas.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'client' },
     //   '~/plugins/vue-i18n.js',
     '~/plugins/vue-material.js',
-    { src: '~/plugins/rating.js', ssr: false }
+    { src: '~/plugins/rating.js', ssr: false },
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
