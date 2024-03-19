@@ -10,7 +10,7 @@
       v-if="page_load == 'uploading'"
     />
     <div v-if="file && page_load == 'default'">
-      <SignComponent
+      <!-- <SignComponent
         :pdfUrl="getURL(file)"
         :get_pdf="get_result"
         :currentPage="currentPageNum"
@@ -18,7 +18,7 @@
         @upload="upload_png"
         :sign_obj="sign_obj"
         @editSign="modalValidate = true"
-      />
+      /> -->
     </div>
     <input
       type="file"
@@ -41,18 +41,18 @@
       :featureImgUrl="svgUrl"
     />
 
-     <SignatureModal
+    <SignatureModal
       v-if="modalValidate"
       :nameProps="sign_name"
       @close="set_sign_items"
-    />  
+    />
   </div>
 </template>
 
 <script>
 import generateURL from "@/services/generateURL";
 import SignatureModal from "@/components/SignatureModal.vue";
-import SignComponent from "@/components/SignComponent.vue";
+//import SignComponent from "@/components/SignComponent.vue";
 import addImagesToPDF1 from "@/services/add_img_to_pdf1";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
@@ -64,35 +64,35 @@ export default {
   head() {
     return {
       title:
-      "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
-    meta: [
-      {
-        name: "Keywords",
-        content:
-          "Sign PDF, digital signature, sign PDF online, electronic signature, PDF signing tool, e-signature, online signature, sign PDF documents, secure PDF ",
-      },
-      {
-        name: "description",
-        content:
-          "Sign PDF documents securely our electronic signature tool. This tool ensures a seamless and reliable way to sign your PDFs electronically.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Sign PDF documents securely our electronic signature tool. This tool ensures a seamless and reliable way to sign your PDFs electronically.",
-      },
-      {
-        property: "og:title",
-        content:
-          "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
-      },
-    ],
-    }
-  } ,
+        "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
+      meta: [
+        {
+          name: "Keywords",
+          content:
+            "Sign PDF, digital signature, sign PDF online, electronic signature, PDF signing tool, e-signature, online signature, sign PDF documents, secure PDF ",
+        },
+        {
+          name: "description",
+          content:
+            "Sign PDF documents securely our electronic signature tool. This tool ensures a seamless and reliable way to sign your PDFs electronically.",
+        },
+        {
+          property: "og:description",
+          content:
+            "Sign PDF documents securely our electronic signature tool. This tool ensures a seamless and reliable way to sign your PDFs electronically.",
+        },
+        {
+          property: "og:title",
+          content:
+            "Sign PDF – Securely Sign PDF Files for Free | Electronic Signature Tool",
+        },
+      ],
+    };
+  },
   mixins: [fileHandlingMixin],
   components: {
-    SignComponent,
-   // SignatureModal,
+    //  SignComponent,
+    // SignatureModal,
     SelectFileComponent,
     Processing,
     Uploading,

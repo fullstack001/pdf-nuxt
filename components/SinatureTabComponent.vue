@@ -50,12 +50,28 @@
       <div id="text" class="tabcontent">
         <div class="name-initial">
           <div
-            style="display: inline-flex"
+            style="display: inline-flex; align-items: center"
             v-for="family in font_families"
             :key="family"
             class="sign-option"
           >
-            <input type="radio" :value="family" v-model="sign_picked_family" />
+            <div
+              style="
+                display: inline-flex;
+                margin: auto 0;
+                align-items: center;
+                top: 13px;
+                position: relative;
+                align-content: center;
+              "
+            >
+              <input
+                type="radio"
+                class="radio-input"
+                :value="family"
+                v-model="sign_picked_family"
+              />
+            </div>
             <label
               :id="family"
               for="one"
@@ -107,7 +123,7 @@
         >
           <i class="fa-solid fa-trash-can"></i>
         </div>
-        <vue-drawing-canvas
+        <!-- <vue-drawing-canvas
           ref="VueCanvasDrawing"
           :width="640"
           :height="240"
@@ -115,7 +131,7 @@
           :backgroundColor="'#f5f5fa'"
           :color="color"
           :saveAs="'png'"
-        />
+        /> -->
         <canvas
           ref="myCanvas"
           width="320"
@@ -162,12 +178,12 @@
     </div>
   </div>
 </template>
-<script> 
+<script>
 import html2canvas from "html2canvas";
 import DropFile from "./DropFile.vue";
 
 export default {
-  components: { 
+  components: {
     DropFile,
   },
   mounted() {
@@ -292,6 +308,9 @@ export default {
 </script>
 
 <style scoped>
+.radio-input {
+  width: 100px !important ;
+}
 .reset-draw {
   position: absolute;
   top: 20px;
