@@ -1,6 +1,6 @@
- import colors from 'vuetify/es5/util/colors'
-import {   I18N } from './config'
- 
+import colors from 'vuetify/es5/util/colors'
+import { I18N } from './config'
+
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -20,6 +20,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  loading: {
+    color: '#FF7C03', // Change this to the desired color
+    height: '2px' // Optionally, you can adjust the height of the progress bar
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -29,12 +33,12 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [ 
+  plugins: [
     { src: '~/plugins/crypto.js', mode: 'client' },
     { src: '~/plugins/vuelidate.js', mode: 'client' },
     //   '~/plugins/vue-i18n.js',
- '~/plugins/vue-material.js',
- { src: '~/plugins/rating.js', ssr: false }
+    '~/plugins/vue-material.js',
+    { src: '~/plugins/rating.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,12 +54,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     ['nuxt-i18n', I18N],
-     '@nuxtjs/axios',
-     'nuxt-sweetalert2',
-     'vue-sweetalert2/nuxt'
+    '@nuxtjs/axios',
+    'nuxt-sweetalert2',
+    'vue-sweetalert2/nuxt'
   ],
- 
-   
+
+
   axios: {
     baseURL: 'https://api.pdfden.com/api',
   },

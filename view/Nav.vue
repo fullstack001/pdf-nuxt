@@ -5,7 +5,8 @@
         <img src="@/assets/img/vue-logo.png" width="160" srcset="" />
       </LocalizedLink>
       <div class="navbar-toggle" @click="toggleNavbar">
-        <md-icon>menu</md-icon>
+        <!-- <md-icon>menu</md-icon> -->
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
       <ul class="nav-lists">
         <li class="nav-item" style="position: relative; right: 10%">
@@ -77,7 +78,8 @@
                   style="
                     min-width: 38px;
                     font-weight: 600 !important;
-                    font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif
+                    font-family: Roboto, Noto Sans, -apple-system,
+                      BlinkMacSystemFont, sans-serif;
                   "
                 >
                   {{ $t("other_features.convert_pdf.title") }}
@@ -217,12 +219,12 @@ export default {
   components: { LocalizedLink },
   computed: {
     user() {
-      return {} ;// store.state.user;
+      return {}; // store.state.user;
     },
   },
   methods: {
     setUser(user) {
-     // store.commit("setUser", user);
+      // store.commit("setUser", user);
     },
     toggleNavbar() {
       this.isOpen = !this.isOpen;
