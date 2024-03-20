@@ -65,6 +65,7 @@
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "./style.css";
 export default {
+  layout: "admin",
   props: {
     title: {
       type: String,

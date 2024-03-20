@@ -57,6 +57,7 @@ export default {
     { src: '~/plugins/vuelidate.js', mode: 'client' },
     //   '~/plugins/vue-i18n.js',
     '~/plugins/vue-material.js',
+    '~/plugins/axios.js',
     { src: '~/plugins/rating.js', ssr: false },
 
   ],

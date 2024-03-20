@@ -24,10 +24,10 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
 import Pagination from "./Pagination.vue";
 
 export default {
+  layout: "admin",
   components: {
     Pagination,
   },

@@ -90,8 +90,8 @@ export default {
   data() {
     return {
       userForm: {
-        email: "",
-        password: "",
+        email: "test@admin.com",
+        password: "1234567",
       },
       isSubmitted: false,
       userExit: false,
@@ -128,14 +128,15 @@ export default {
       this.$axios
         .post("/admin/login", this.userForm)
         .then((res) => {
-          // console.log(res.data);
+          console.log(res);
           localStorage.setItem("token", res.data.token);
           this.$emit("authen");
           //   this.$router.push("/admin/liveview");
         })
         .catch((err) => {
-          const errorMessage = err.response.data.errors[0].msg;
-          console.log(errorMessage);
+          console.log(err);
+          // const errorMessage = err.response.data.errors[0].msg;
+          // console.log(errorMessage);
         });
     },
   },
