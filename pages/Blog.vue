@@ -114,6 +114,7 @@ export default {
           title: modifiedTitle,
           id: id,
         },
+        force: true,
       });
     },
   },

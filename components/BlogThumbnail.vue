@@ -6,12 +6,12 @@
       </div>
       <div class="md-layout">
         <div
-          class=" md-layout-item blog-panel"
+          class="md-layout-item blog-panel"
           v-for="blog in blogs"
           :key="blog._id"
           @click="goBlogDetail(blog.title, blog._id)"
         >
-          <div class="blog-body cardd">
+          <div class="blog-body card">
             <md-card-media>
               <img class="blog_img" :src="blog.img" alt="People" />
               <div class="card-tip">
@@ -35,7 +35,6 @@
             </md-card-header>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -60,48 +59,55 @@ export default {
     setDate(data) {
       return getDate(data);
     },
-   async  fetchBlog() {
-    await  this.$axios
+    async fetchBlog() {
+      await this.$axios
         .get("/pdf/latestBlogs")
         .then((res) => {
           this.blogs = res.data;
         })
         .catch((err) => console.log(err));
     },
+    // goBlogDetail(title, id) {
+    //   const modifiedTitle = title.replace(/ /g, "-");
+
+    //   this.$router.push({
+    //     path: "/blogDetail",
+    //     query: {
+    //       title: modifiedTitle,
+    //       id: id,
+    //     },
+    //     force: true,
+    //   });
+    // },
     goBlogDetail(title, id) {
-     
       const modifiedTitle = title.replace(/ /g, "-");
-      
-      this.$router.push({
-            path: "/blogDetail",
-            // this.$route.params.locale == undefined
-            //   ? "download"
-            //   : "en_download",
-            query: {
-              title: modifiedTitle,
-          id: id,
-            },
-          });
-      // this.$router.replace({
-      //   path:  "/blogDetail" ,
-      //   query: {
-      //     title: modifiedTitle,
-      //     id: id,
-      //   },
-      // });
+      const destinationPath = `/blogDetail`;
+
+      if (this.$route.path === destinationPath) {
+        // If navigating to the same route, manually trigger a page reload
+        window.location.href =
+          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+      } else {
+        // Otherwise, navigate to the destination route
+        this.$router.push({
+          path: "/blogDetail",
+          query: {
+            title: modifiedTitle,
+            id: id,
+          },
+        });
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-.cardd{
-  
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-    box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.14) !important;
-    border-radius: 3px !important;
-    padding:15px !important
-
+.cardd {
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.14) !important;
+  border-radius: 3px !important;
+  padding: 15px !important;
 }
 .solution {
   background-color: #fff;

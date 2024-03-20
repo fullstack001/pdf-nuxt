@@ -13,7 +13,6 @@
 </template>
 
 <script>
- 
 import { gDrive_clientId, gDrive_dev_key } from "../key_env";
 export default {
   name: "Attachment",
@@ -244,8 +243,7 @@ export default {
   height: 40px;
   border-radius: 50%;
   border: solid 2px #ff7c03;
-  margin-bottom: 15px;
-  margin-top: 0px;
+
   cursor: pointer;
   background-color: transparent;
 }
@@ -257,4 +255,4 @@ export default {
 .gdrive_btn:hover {
   background-color: #ff7c03;
 }
-</style> 
+</style>

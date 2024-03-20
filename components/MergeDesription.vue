@@ -485,7 +485,13 @@ export default {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 91%;
+  /* max-width: 91%; */
+}
+@media (max-width: 640px) {
+  .free-img img {
+    max-width: 150px;
+    margin: 0px;
+  }
 }
 .md-layout {
   max-height: 95vh;

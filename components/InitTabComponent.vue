@@ -106,7 +106,7 @@
         >
           <i class="fa-solid fa-trash-can"></i>
         </div>
-        <vue-drawing-canvas
+        <!-- <vue-drawing-canvas
           ref="InitVueCanvasDrawing"
           :width="640"
           :height="240"
@@ -114,7 +114,7 @@
           :backgroundColor="'#f5f5fa'"
           :color="color"
           :saveAs="'png'"
-        />
+        /> -->
         <canvas
           ref="myInitCanvas"
           width="320"
@@ -171,7 +171,7 @@ import DropFile from "./DropFile.vue";
 
 export default {
   components: {
-  // VueDrawingCanvas,
+    // VueDrawingCanvas,
     DropFile,
   },
   props: ["name", "get_init"],

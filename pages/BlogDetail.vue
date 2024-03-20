@@ -35,11 +35,13 @@
         </div>
       </div>
     </div>
-    <BlogThumbnail :routing="false" />
+    <BlogThumbnail :routing="true" />
   </div>
 </template>
+
 <script>
 import BlogThumbnail from "@/components/BlogThumbnail.vue";
+
 function getDaySuffix(day) {
   if (day >= 11 && day <= 13) {
     return "th";
@@ -57,86 +59,94 @@ function getDaySuffix(day) {
 }
 
 export default {
-  // metaInfo: {
-  //   meta: [
-  //     {
-  //       vmid: "description",
-  //       name: "description",
-  //       content: "Child description.",
-  //     },
-  //     {
-  //       vmid: "description1",
-  //       name: "description1",
-  //       content: "Child description1.",
-  //     },
-  //   ],
-  // },
-  metaInfo() {
-    return this.setMetaData();
-  },
-  // metaInfo() {
-  //   return new Promise((resolve, reject) => {
-  //     this.setMetaData()
-  //       .then(() => {
-  //         this.moveMetaTagToTop();
-  //         resolve();
-  //       })
-  //       .catch((error) => {
-  //         reject(error);
-  //       });
-  //   });
-  // },
-  mounted() {
-    this.moveMetaTagToTop();
-  },
-  onUpdated() {
-    this.moveMetaTagToTop();
-  },
   components: {
     BlogThumbnail,
   },
-  created() {
-    this.fetchBlogs(this.$route.query.title);
+
+  async asyncData({ query, $axios }) {
+    try {
+      const res = await $axios.get(`/pdf/blog/${query.title}`);
+      const { blog, titles } = res.data;
+      return { blog, titles };
+    } catch (error) {
+      console.error("Error fetching blog data:", error);
+      return { blog: null, titles: [] };
+    }
   },
-  data() {
+  head() {
+    let metaArray = [
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "article",
+      },
+      {
+        hid: "Keywords",
+        name: "Keywords",
+        content:
+          "PDF tools, online PDF editor, PDF converter, merge PDF, split PDF, compress PDF, edit PDF, convert to PDF, PDF merge, PDF split, PDF compression, editable PDF, online PDF suite, PDF utility",
+      },
+    ];
+
+    if (this.blog) {
+      metaArray.push(
+        {
+          hid: "article:modified_time",
+          property: "article:modified_time",
+          content: this.blog.uploadTime,
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.blog.title,
+        }
+      );
+
+      if (this.blog.metaData.length > 0) {
+        this.blog.metaData.forEach((data) => {
+          if (data.title.length > 0 && data.content.length) {
+            metaArray.push({
+              hid: data.title,
+              name: data.title,
+              content: data.content,
+            });
+          }
+        });
+      }
+    }
+
     return {
-      metaTitle: "New description",
-      blog: null,
-      titles: [],
+      title: this.blog ? this.blog.title : "Loading...",
+      meta: metaArray,
     };
   },
-  watch: {
-    "$route.query.title": function (newTitle, oldTitle) {
-      // Handle the change of params.title here
-      this.fetchBlogs(newTitle);
-    },
-  },
   methods: {
-    fetchBlogs(title) {
-      this.$axios
-        .get(`/pdf/blog/${title}`)
-        .then((res) => {
-          this.blog = res.data.blog;
-          this.titles = res.data.titles;
-        })
-        .catch((err) => console.log(err));
-    },
     getPrevBlog(id) {
-      const index = this.titles.findIndex((item) => item._id === id);
+      const index = this.titles.findIndex((item) => item._id == id);
+
       if (index == 0) {
         return;
       }
+
       const newItem = this.titles[index - 1];
       const modifiedTitle = newItem.title.replace(/ /g, "-");
-      this.$router.push({
-        name:
-          this.$route.params.locale == undefined
-            ? "blogDetail"
-            : "en_blogDetail",
-        params: {
-          title: modifiedTitle,
-        },
-      });
+
+      const destinationPath = `/blogDetail`;
+
+      if (this.$route.path === destinationPath) {
+        // If navigating to the same route, manually trigger a page reload
+        window.location.href =
+          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+      } else {
+        // Otherwise, navigate to the destination route
+        this.$router.push({
+          path: destinationPath,
+          query: {
+            title: modifiedTitle,
+            id: id,
+          },
+        });
+      }
     },
     getNextBlog(id) {
       const index = this.titles.findIndex((item) => item._id === id);
@@ -145,16 +155,23 @@ export default {
       }
       const newItem = this.titles[index + 1];
       const modifiedTitle = newItem.title.replace(/ /g, "-");
-      this.$router.push({
-        name:
-          this.$route.params.locale == undefined
-            ? "blogDetail"
-            : "en_blogDetail",
-        params: {
-          title: modifiedTitle,
-          id: newItem._id,
-        },
-      });
+
+      const destinationPath = `/blogDetail`;
+
+      if (this.$route.path === destinationPath) {
+        // If navigating to the same route, manually trigger a page reload
+        window.location.href =
+          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+      } else {
+        // Otherwise, navigate to the destination route
+        this.$router.push({
+          path: destinationPath,
+          query: {
+            title: modifiedTitle,
+            id: id,
+          },
+        });
+      }
     },
     formatDate(dateString) {
       const date = new Date(dateString);
@@ -165,49 +182,6 @@ export default {
       const daySuffix = getDaySuffix(day);
 
       return `${day}${daySuffix} ${month}, ${year}`;
-    },
-    setMetaData() {
-      if (this.blog) {
-        let metaArray = [
-          {
-            property: "article:modified_time",
-            content: this.blog.uploadTime,
-          },
-          {
-            property: "og:type",
-            content: "article",
-          },
-          {
-            name: "Keywords",
-            content:
-              "PDF tools, online PDF editor, PDF converter, merge PDF, split PDF, compress PDF, edit PDF, convert to PDF, PDF merge, PDF split, PDF compression, editable PDF, online PDF suite, PDF utility",
-          },
-          {
-            property: "og:title",
-            content: this.blog.title,
-          },
-        ];
-        if (this.blog.metaData.length > 0) {
-          this.blog.metaData.forEach((data) => {
-            if (data.title.length > 0 && data.content.length) {
-              metaArray.push({
-                vmid: data.title,
-                name: data.title,
-                content: data.content, // Bind meta content to the data property metaTitle
-              });
-            }
-          });
-        }
-        return { title: this.blog.title, meta: metaArray };
-      }
-    },
-    moveMetaTagToTop() {
-      setTimeout(() => {
-        const metaTags = document.querySelectorAll("meta");
-        metaTags.forEach((tag) => {
-          document.head.insertBefore(tag, document.head.firstElementChild);
-        });
-      }, 500);
     },
   },
 };

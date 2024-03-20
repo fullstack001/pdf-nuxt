@@ -166,9 +166,38 @@
       ref="sidebar"
       :style="myStyleObject"
     >
+      aaaaa
       <h3>{{ $t("page_titles.split_page.split") }}</h3>
       <div class="tab-area">
-        <md-tabs md-alignment="centered">
+        <v-tabs
+          v-model="tab"
+          align-tabs="center"
+          bg-color="deep-purple-accent-4"
+          stacked
+        >
+          <v-tab value="tab-1">
+            <v-icon>mdi-phone</v-icon>
+            Recents
+          </v-tab>
+
+          <v-tab value="tab-2">
+            <v-icon>mdi-heart</v-icon>
+            Favorites
+          </v-tab>
+
+          <v-tab value="tab-3">
+            <v-icon>mdi-account-box</v-icon>
+            Nearby
+          </v-tab>
+        </v-tabs>
+        <!-- <v-card-text>
+          <v-window v-model="tab">
+            <v-window-item value="one"> One </v-window-item>
+
+            <v-window-item value="two"> Two </v-window-item>
+          </v-window>
+        </v-card-text> -->
+        <!-- <md-tabs md-alignment="centered">
           <md-tab
             id="tab-home"
             md-icon="picture_as_pdf"
@@ -202,7 +231,7 @@
               @extractChange="setExtract"
             />
           </md-tab>
-        </md-tabs>
+        </md-tabs> -->
       </div>
 
       <div class="option__panel option__panel--active" id="merge-options">
@@ -273,6 +302,8 @@ export default {
   },
   data() {
     return {
+      tab: null,
+
       isDragging: false,
       file: null,
       pageCount: 0,

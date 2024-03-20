@@ -147,7 +147,7 @@ export default {
   padding-left: 50px;
 }
 .cloud-dropBox {
-  margin-top: -5px !important;
+  margin-top: 10px !important;
 }
 
 @media only screen and (max-width: 991px) {
@@ -184,7 +184,7 @@ export default {
     text-align: center;
   }
   .cloud-dropBox {
-    margin-top: 8px !important;
+    margin-top: 10px !important;
   }
 }
 </style>

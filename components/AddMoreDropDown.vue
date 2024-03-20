@@ -22,14 +22,11 @@
       </div>
 
       <md-speed-dial-content>
-        <md-button class="md-icon-button" @click="open_add_local">
-          <i class="fa fa-laptop" aria-hidden="true"></i>
-          <md-tooltip md-direction="right"
-            >{{ $t("toolTip.upload_local") }}
-          </md-tooltip>
+        <md-button class="md-icon-button">
+          <FilePicker @open_add_local="open_add_local" />
         </md-button>
 
-        <md-button class="md-icon-button1">
+        <md-button class="md-icon-button">
           <GDriveSelector
             @picked="onPickedGoogleDriver"
             :buttonStyle="'download'"
@@ -37,7 +34,8 @@
             <md-tooltip md-direction="top"> </md-tooltip>
           </GDriveSelector>
         </md-button>
-        <md-button class="dropbox-btn md-icon-button1">
+
+        <md-button class="md-icon-button">
           <VueDropboxPicker
             class="cloud dropbox"
             link-type="direct"
@@ -57,6 +55,7 @@
 <script>
 import GDriveSelector from "./GDriveSelector.vue";
 import VueDropboxPicker from "./DropboxPicker.vue";
+import FilePicker from "./FilePicker.vue";
 export default {
   props: {
     pdfCounts: {
@@ -67,6 +66,7 @@ export default {
   components: {
     GDriveSelector,
     VueDropboxPicker,
+    FilePicker,
   },
   name: "PositionDirection",
   data: () => ({
@@ -88,6 +88,9 @@ export default {
 </script>
 
 <style scoped>
+.drop-button {
+  height: 50px;
+}
 .badge-container {
   position: relative;
 }
@@ -98,7 +101,7 @@ h3 {
 .add_badge {
   position: absolute;
   top: -10px;
-  right: 60px;
+  right: 26px;
   background-color: rgb(10, 10, 10);
   color: white;
   border-radius: 100%;
@@ -142,14 +145,25 @@ h3 {
 .md-icon-button1,
 .md-icon-button2,
 .md-icon-button3 {
+  border: 1px solid red;
   background-color: transparent !important;
   box-shadow: none !important;
   margin-top: 2px;
   margin-bottom: 2px;
+  height: 66px !important;
   padding: 0;
+}
+.md-icon-button {
+  margin: 0px !important;
 }
 
 .md-icon-font {
   color: #000 !important;
+}
+.md-button {
+  margin: 5px 0 !important;
+}
+.md-speed-dial.md-top-left {
+  left: 61px !important;
 }
 </style>
