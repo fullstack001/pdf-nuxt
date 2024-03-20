@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Nav from "@/view/Nav.vue";
-import Footer from "@/view/Footer.vue";
-import EventBus from "@/EventBus";
+import Nav from "@/components/layout/Nav.vue";
+import Footer from "@/components/layout/Footer.vue";
+import EventBus from "@/config/EventBus";
 
 export default {
   name: "app",
@@ -116,7 +116,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 .tab-area .md-tabs-navigation {
   box-shadow: none;

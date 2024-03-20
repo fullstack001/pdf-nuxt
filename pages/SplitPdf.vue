@@ -228,7 +228,7 @@ import PDFJSWorker from "pdfjs-dist/legacy/build/pdf.worker.entry";
 GlobalWorkerOptions.workerSrc = PDFJSWorker;
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
-import { fileHandlingMixin } from "@/globalMixin.js";
+import { fileHandlingMixin } from "@/config/globalMixin.js";
 import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/split_pdf.svg";

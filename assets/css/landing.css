@@ -9,10 +9,11 @@
   background-size: cover;
   background-image: url("../../assets/img/background.svg");
 }
+
 .block__container {
-    max-width: 84%;
-    margin:auto
-  }
+  max-width: 84%;
+  margin: auto
+}
 
 .tools h2,
 .tools h4 {
@@ -20,16 +21,17 @@
 }
 
 h2 {
-  
+
   padding-top: 60px;
   /* margin-top: 10px !important; */
 }
 
-  h4 {
-  
-    margin-top: 10px;
-    margin-bottom: 10px;
-}  
+h4 {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .elevation-demo {
   padding: 16px;
   display: flex;
@@ -66,19 +68,20 @@ h2 {
 }
 
 .tools__item {
-    background: #fff;
-    flex-basis: calc(25% - 30px);
-    border: 1px solid #f5f5fa;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 30px;
+  background: #fff;
+  flex-basis: calc(25% - 30px);
+  border: 1px solid #f5f5fa;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 30px;
 }
-.free-img{
+
+.free-img {
   margin-left: 50%;
 }
 
@@ -111,6 +114,7 @@ h2 {
 .trusted .md-layout .md-layout-item {
   text-align: center;
 }
+
 .trusted .md-layout .md-layout-item img {
   width: 120px;
 }
@@ -198,7 +202,7 @@ h2 {
 }
 
 .md-card-media {
-  padding: 15px;
+  padding: 15px !important;
 }
 
 .md-card-header {
@@ -216,6 +220,7 @@ h2 {
   color: #575757;
   font-size: 20px;
 }
+
 @media (min-width: 992px) {
   .block__container {
     max-width: 84%;
@@ -258,46 +263,51 @@ h2 {
 }
 
 @media (max-width: 640px) {
-  .tools{
-    padding:0 10px 10px;
+  .tools {
+    padding: 0 10px 10px;
   }
+
   .tools__item {
     flex-basis: calc(104% - 30px);
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 20px;
   }
-  .premium{
+
+  .premium {
     padding: 0 0 10px;
   }
-  .free-img{
-  margin-left: 10% !important;
-}
-  
+
+  .free-img {
+    margin-left: 10% !important;
+  }
+
 
   .md-layout-item {
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
+
   .free-img img {
     max-width: 260px;
   }
 
   .tools h2,
-  .premium_title{
+  .premium_title {
     font-size: 20px !important;
     font-weight: 600;
-    padding:10px 0
+    padding: 10px 0
   }
-  .tools h4{
+
+  .tools h4 {
     font-size: 15px;
     font-weight: 400;
   }
 
-  .premium_text{
+  .premium_text {
     font-size: 20px !important;
     line-height: 1.1;
   }
 
 
-  
+
 }

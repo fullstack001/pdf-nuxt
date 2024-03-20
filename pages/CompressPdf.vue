@@ -210,7 +210,7 @@ import generateURL from "@/services/generateURL";
 import AddMoreDropDown from "@/components/AddMoreDropDown.vue";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
-import { fileHandlingMixin } from "@/globalMixin.js";
+import { fileHandlingMixin } from "@/config/globalMixin.js";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/compress_pdf.svg";
 
@@ -536,6 +536,8 @@ export default {
 }
 .tool__sidebar__inactive {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .split_option {
