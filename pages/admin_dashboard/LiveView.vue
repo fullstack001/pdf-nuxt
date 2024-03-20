@@ -30,6 +30,7 @@
 import Pagination from "./Pagination.vue";
 
 export default {
+  layout: "admin",
   components: {
     Pagination,
   },

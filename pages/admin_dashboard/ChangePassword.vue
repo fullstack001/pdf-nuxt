@@ -111,6 +111,7 @@
 <script>
 import { required, minLength } from "vuelidate/lib/validators";
 export default {
+  layout: "admin",
   data() {
     return {
       userForm: {

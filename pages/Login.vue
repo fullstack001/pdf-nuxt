@@ -99,8 +99,8 @@ export default {
   data() {
     return {
       userForm: {
-        email: "",
-        password: "",
+        email: "test@admin.com",
+        password: "1234567",
       },
       isSubmitted: false,
       emailErr: false,
@@ -139,13 +139,12 @@ export default {
         .post("/auth/", this.userForm)
         .then((res) => {
           // Decode the JWT
-
           localStorage.setItem("token", res.data.token);
           sessionStorage.setItem("token", res.data.token);
-
           const decoded = VueJwtDecode.decode(res.data.token);
           const user = decoded.user;
-          this.setUser(user);
+
+          // this.setUser(user);
           if (user.isAdmin == 1) {
             this.$router.push("/admin_dashboard");
           } else {
