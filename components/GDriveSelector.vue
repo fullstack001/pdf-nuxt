@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { gDrive_clientId, gDrive_dev_key } from "../key_env";
+import { gDrive_clientId, gDrive_dev_key } from "@/config/key_env.js";
 export default {
   name: "Attachment",
   props: ["buttonStyle", "file"],

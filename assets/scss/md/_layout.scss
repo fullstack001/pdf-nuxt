@@ -1,8 +1,13 @@
 .md-layout-item {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
 }
 
+@media (max-width: 640px) {
+  .md-layout-item {
+    margin-top: 30px;
+  }
+}
 .md-list .md-ripple {
   overflow: hidden;
 }

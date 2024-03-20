@@ -11,7 +11,7 @@
     <md-button
       class="md-raised range_btn"
       @click="fixedRangeEdit"
-      v-bind:class="custom_show ? '' : 'active_btn'"    
+      v-bind:class="custom_show ? '' : 'active_btn'"
     >
       {{ $t("page_titles.split_page.fixedRange") }}
     </md-button>
@@ -185,7 +185,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 h3 {
   text-align: left;
@@ -193,18 +193,16 @@ h3 {
   font-weight: 400;
 }
 
-
 .range_btn:hover,
-.range_btn:focus{
+.range_btn:focus {
   padding: 5px 0px;
   font-size: 14px;
-  margin: 10px 10px;  
+  margin: 10px 10px;
   border-radius: 10px;
   color: #85858e !important;
   font-weight: 500;
   background-color: #ff7c03 !important;
 }
-
 
 .file__btn {
   background: #fefefe;

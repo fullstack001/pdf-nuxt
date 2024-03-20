@@ -56,7 +56,7 @@ import SignatureModal from "@/components/SignatureModal.vue";
 import addImagesToPDF1 from "@/services/add_img_to_pdf1";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
-import { fileHandlingMixin } from "@/globalMixin.js";
+import { fileHandlingMixin } from "@/config/globalMixin.js";
 import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/sign_pdf.svg";

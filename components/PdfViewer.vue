@@ -95,7 +95,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 .pageContainer {
   margin: auto;

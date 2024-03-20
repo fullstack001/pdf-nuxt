@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { dropBox_apiKey } from "../key_env";
+import { dropBox_apiKey } from "@/config/key_env";
 export default {
   props: {
     linkType: {
@@ -169,7 +169,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 .dropbox-icon {
   width: 40px;
@@ -192,3 +192,4 @@ body {
   background-color: #ff7c03;
 }
 </style>
+../config/key_env

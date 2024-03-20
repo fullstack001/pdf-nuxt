@@ -590,7 +590,7 @@ import AddMoreDropDown from "@/components/AddMoreDropDown.vue";
 import JSZip from "jszip";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
-import { fileHandlingMixin } from "@/globalMixin.js";
+import { fileHandlingMixin } from "@/config/globalMixin.js";
 import SvgImage from "@/assets/feature_img/rotate_pdf.svg";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 

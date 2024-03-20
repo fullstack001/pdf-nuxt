@@ -4,17 +4,17 @@ import VueI18n from "vue-i18n";
 
 import getBrowserLocale from "@/util/i18n/get-browser-locale";
 
-import { supportedLocalesInclude } from "./util/i18n/supported-locales";
+import { supportedLocalesInclude } from "../util/i18n/supported-locales";
 
 import {
   getChoiceIndex,
   setDefaultChoiceIndexGet,
-} from "./util/i18n/choice-index-for-plural";
+} from "../util/i18n/choice-index-for-plural";
 
 import dateTimeFormats from "@/locales/date-time-formats";
 
 import numberFormats from "@/locales/number-formats";
-import EventBus from "@/EventBus";
+import EventBus from "@/config/EventBus";
 
 Vue.use(VueI18n);
 

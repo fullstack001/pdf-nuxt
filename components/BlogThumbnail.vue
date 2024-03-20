@@ -11,7 +11,7 @@
           :key="blog._id"
           @click="goBlogDetail(blog.title, blog._id)"
         >
-          <div class="blog-body card">
+          <div class="md-card blog-body md-theme-default">
             <md-card-media>
               <img class="blog_img" :src="blog.img" alt="People" />
               <div class="card-tip">
@@ -169,6 +169,9 @@ export default {
 img {
   width: 480px;
   height: 280px;
+}
+.md-card-media {
+  padding: 15px !important;
 }
 @media only screen and (max-width: 1870px) {
   .blog-body {

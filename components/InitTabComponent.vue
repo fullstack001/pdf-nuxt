@@ -54,7 +54,24 @@
             :key="family"
             class="sign-option"
           >
-            <input type="radio" :value="family" v-model="init_picked_family" />
+            <!-- <input type="radio" :value="family" v-model="init_picked_family" /> -->
+            <div
+              style="
+                display: inline-flex;
+                margin: auto 0;
+                align-items: center;
+                top: 13px;
+                position: relative;
+                align-content: center;
+              "
+            >
+              <input
+                type="radio"
+                class="radio-input"
+                :value="family"
+                v-model="init_picked_family"
+              />
+            </div>
             <label
               :id="family + 'init'"
               for="one"
@@ -289,6 +306,9 @@ export default {
 </script>
 
 <style scoped>
+.radio-input {
+  width: 100px !important ;
+}
 .reset-draw {
   position: absolute;
   top: 20px;
