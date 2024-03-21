@@ -142,4 +142,8 @@ export default {
 
 <style scoped>
 @import "../assets/css/landing.css";
+
+.tools h2 {
+  margin-top: 0 !important;
+}
 </style>

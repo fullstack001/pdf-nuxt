@@ -8,6 +8,10 @@
   // @include variations(unquote(".label"), unquote(""), background-color, $grey);
 }
 
+input[type="text"] {
+  border: 1px solid !important;
+}
+
 // must be broken out for reuse - webkit selector breaks firefox
 @mixin label-static($label-top, $static-font-size, $static-line-height) {
   label.control-label {

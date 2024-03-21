@@ -67,8 +67,8 @@ export default {
     },
     newBlog() {
       this.$router.push({
-        name: "blogediter",
-        params: {
+        path: "/admin_dashboard/blogediter",
+        query: {
           title: "New Blog",
           saveType: "new",
         },
@@ -76,8 +76,8 @@ export default {
     },
     editItem(blog) {
       this.$router.push({
-        name: "blogediter",
-        params: {
+        path: "/admin_dashboard/blogediter",
+        query: {
           title: "Edit Blog",
           saveType: "update",
           id: blog._id,

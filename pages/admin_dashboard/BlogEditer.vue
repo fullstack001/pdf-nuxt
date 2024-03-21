@@ -82,21 +82,27 @@
       </div>
       <div class="blog-content blog-item">
         <span>Content:</span>
-        <ckeditor :editor="editor" v-model="editorData"></ckeditor>
+        <ckeditor-nuxt v-model="editorData" />
+        <!-- <ckeditor :editor="editor" name="ck" v-model="editorData"></ckeditor> -->
       </div>
     </div>
   </div>
 </template>
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+//import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CkeditorNuxt from "@/components/CkeditorNuxt";
 export default {
   layout: "admin",
+  components: {
+    CkeditorNuxt,
+  },
   data() {
     return {
       isDragging: false,
       imgURL: null,
       blogTitle: "",
-      editor: ClassicEditor,
+      content: "",
+      // editor: ClassicEditor,
       editorData: "<p>Content of the editor.</p>",
       title: "",
       metaTitle: "",
@@ -110,14 +116,14 @@ export default {
     };
   },
   created() {
-    if (this.$route.params.title == "New Blog") {
-      this.title = this.$route.params.title;
-    } else if (this.$route.params.title == "Edit Blog") {
-      this.title = this.$route.params.title;
-      this.fetchData(this.$route.params.id);
-    } else {
-      this.$router.push({ name: "blogcontent" });
-    }
+    // if (this.$route.params.title == "New Blog") {
+    //   this.title = this.$route.params.title;
+    // } else if (this.$route.params.title == "Edit Blog") {
+    //   this.title = this.$route.params.title;
+    //   this.fetchData(this.$route.params.id);
+    // } else {
+    //   this.$router.push({ path: "/admin_dashboard/blogcontent" });
+    // }
   },
   methods: {
     fetchData(id) {
@@ -206,7 +212,8 @@ export default {
         uploadTime: Date.now(),
       };
       const data = JSON.stringify(blog);
-      if (this.$route.params.saveType === "new") {
+
+      if (this.$route.query.saveType === "new") {
         this.$axios
           .post("admin/blog", { data: data })
           .then((res) => {
@@ -214,27 +221,27 @@ export default {
             this.$swal("Success!", "New Blog have added", "success");
             this.$nextTick().then(() => {
               // Now, the DOM has been updated, and you can safely execute the next statement
-              this.$router.push({ name: "blogcontent" });
+              this.$router.push({ name: "/admin_dashboard/blogcontent" });
             });
           })
           .catch((err) => {
             console.log(err);
-            this.$router.push({ name: "blogcontent" });
+            this.$router.push({ name: "/admin_dashboard/blogcontent" });
           });
       } else {
         this.$axios
-          .put(`admin/blog/${this.$route.params.id}`, { data: data })
+          .put(`admin/blog/${this.$route.query.id}`, { data: data })
           .then((res) => {
             console.log(res.data);
             this.$swal("Success!", "Blog have updated", "success");
             this.$nextTick().then(() => {
               // Now, the DOM has been updated, and you can safely execute the next statement
-              this.$router.push({ name: "blogcontent" });
+              this.$router.push({ name: "/admin_dashboard/blogcontent" });
             });
           })
           .catch((err) => {
             console.log(err);
-            this.$router.push({ name: "blogcontent" });
+            this.$router.push({ name: "/admin_dashboard/blogcontent" });
           });
       }
     },
@@ -253,6 +260,7 @@ export default {
 
 <style lang="scss" scoped>
 .blog-editer-container {
+  width: 100%;
   margin: 30px;
   margin-top: 50px;
 }
