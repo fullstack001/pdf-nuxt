@@ -68,11 +68,11 @@
             {{ $t("page_titles.sign_page.stamp") }}
           </label>
           <div class="tab-content">
-            <!-- <StampDropFile
+            <StampDropFile
               :get_stamp="get_signature"
               :data="'stamp_img'"
               @set_stamp="set_stamp"
-            /> -->
+            />
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
 </template>
 
 <script>
-//import StampDropFile from "./StampDropFile.vue";
+import StampDropFile from "./StampDropFile.vue";
 import { required } from "vuelidate/lib/validators";
 import modal from "./Modal.vue";
 import SinatureTabComponent from "./SinatureTabComponent.vue";
@@ -90,7 +90,7 @@ import convert from "@/services/convertTextToImg.js";
 
 export default {
   components: {
-    // StampDropFile,
+    StampDropFile,
     modal,
     SinatureTabComponent,
     InitTabComponent,
@@ -297,6 +297,6 @@ input {
   padding: 10px;
   border-radius: 5px;
   border-width: thin;
+  border: 1px solid !important;
 }
 </style>
-../components/signature/StampDropFile.vue../components/signature/Modal.vue../components/signature/SinatureTabComponent.vue../components/signature/InitTabComponent.vue
