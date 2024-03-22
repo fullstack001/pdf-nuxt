@@ -4,6 +4,7 @@ import { I18N } from './config'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  mode: 'spa',
   head: {
     titleTemplate: 'pdfden',
     title: 'pdfden',
@@ -64,7 +65,7 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
+  store: true,
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
@@ -77,7 +78,8 @@ export default {
     ['nuxt-i18n', I18N],
     '@nuxtjs/axios',
     'nuxt-sweetalert2',
-    'vue-sweetalert2/nuxt'
+    'vue-sweetalert2/nuxt',
+
   ],
 
 

@@ -265,8 +265,6 @@ export default {
   },
   created() {},
   mounted() {
-    console.log(window.location.origin);
-    console.log(this.$route);
     this.download_urls = window.location.origin + this.$route.fullPath;
     // // Your secret key (should be kept private)
     const secretKey = "mySecretKey123";
