@@ -8,7 +8,7 @@
     "compress_pdf": "Compresser le PDF",
     "convert_pdf": "Convertir PDF",
     "blog": "Blog",
-    "copyright": "Copyright PdfDen. Tous droits réservés."
+    "copyright": "2024 PdfDen. Tous droits réservés."
   },
   "page_titles": {
     "landing": {
@@ -32,22 +32,22 @@
       }
     },
     "signUp": {
-       "create": "Créer un nouveau compte",
-       "name_req": "Le champ Nom est obligatoire",
-       "fullName": "Nom complet",
-       "email": "Adresse email",
-       "email_req": "Le champ email est obligatoire",
-       "email_type": "Veuillez fournir une adresse email valide",
-       "email_exi": "L'utilisateur existe déjà",
-       "pass": "Créer un mot de passe",
-       "pass_req": "Le champ Mot de passe est obligatoire",
-       "pass_length": "Le mot de passe doit comporter au moins 6 caractères",
-       "signUp": "Inscrivez-vous",
-       "have_acc": "Vous avez un compte ?",
-       "login":"Connexion",
-       "tool_title": "Outils PDF pour les personnes productives",
-       "tool_des": " PDFDen vous aide à convertir, modifier, signer électroniquement et protéger des fichiers PDF rapidement et facilement. Profitez d'une suite complète d'outils pour gérer efficacement les documents, quel que soit l'endroit où vous travaillez. "
-     },
+      "create": "Créer un nouveau compte",
+      "name_req": "Le champ Nom est obligatoire",
+      "fullName": "Nom complet",
+      "email": "Adresse email",
+      "email_req": "Le champ email est obligatoire",
+      "email_type": "Veuillez fournir une adresse email valide",
+      "email_exi": "L'utilisateur existe déjà",
+      "pass": "Créer un mot de passe",
+      "pass_req": "Le champ Mot de passe est obligatoire",
+      "pass_length": "Le mot de passe doit comporter au moins 6 caractères",
+      "signUp": "Inscrivez-vous",
+      "have_acc": "Vous avez un compte ?",
+      "login": "Connexion",
+      "tool_title": "Outils PDF pour les personnes productives",
+      "tool_des": " PDFDen vous aide à convertir, modifier, signer électroniquement et protéger des fichiers PDF rapidement et facilement. Profitez d'une suite complète d'outils pour gérer efficacement les documents, quel que soit l'endroit où vous travaillez. "
+    },
     "merge_page": {
       "title": "Fusionner des fichiers PDF",
       "description": "Combinez les PDF dans l'ordre souhaité grâce à la fusion PDF la plus simple disponible.",
@@ -170,21 +170,21 @@
       "extract_des_a": "Le PDF sera créé"
     },
     "sign_page": {
-       "title": "Signer le PDF",
-       "description": "Votre outil pour signer électroniquement des documents. Signez vous-même un document ou envoyez une demande de signature à d'autres.",
-       "selectBtn": "Sélectionner les fichiers PDF",
-       "dropFiles": "Ou déposez les PDF ici",
-       "sign_options": "Options de signature",
-       "name": "nom",
-       "date": "Date",
-       "text": "Texte",
-       "actionBtn": "signer le PDF",
-       "fullName": "Nom complet : ",
-       "initials": "Initiales : ",
-       "signature": "Signature",
-       "initial": "Initiale",
-       "stamp": "Cachet de l'entreprise"
-     },
+      "title": "Signer le PDF",
+      "description": "Votre outil pour signer électroniquement des documents. Signez vous-même un document ou envoyez une demande de signature à d'autres.",
+      "selectBtn": "Sélectionner les fichiers PDF",
+      "dropFiles": "Ou déposez les PDF ici",
+      "sign_options": "Options de signature",
+      "name": "nom",
+      "date": "Date",
+      "text": "Texte",
+      "actionBtn": "signer le PDF",
+      "fullName": "Nom complet : ",
+      "initials": "Initiales : ",
+      "signature": "Signature",
+      "initial": "Initiale",
+      "stamp": "Cachet de l'entreprise"
+    },
     "compress_page": {
       "title": "Compresser le fichier PDF",
       "description": "Réduisez la taille du fichier tout en l'optimisant pour une qualité PDF maximale.",
@@ -200,19 +200,19 @@
       "actionBtn": "Compresser le PDF"
     },
     "pdf_word": {
-       "title": "Convertisseur PDF en WORD",
-       "description": " Convertissez vos documents PDF en documents WORD avec une précision incroyable.",
-       "selectBtn": "Sélectionner les fichiers WORD",
-       "dropFiles": "Ou déposez les PDF ici",
-       "actionBtn": "Convertir en PDF"
-     },
-     "word_pdf": {
-       "title": "Convertir WORD en PDF",
-       "description": " Facilitez la préparation des fichiers DOC et DOCX en les convertissant en PDF.",
-       "selectBtn": "Sélectionner les fichiers PDF",
-       "dropFiles": "Ou déposez les PDF ici",
-       "actionBtn": "Convertir en WORD"
-     }
+      "title": "Convertisseur PDF en WORD",
+      "description": " Convertissez vos documents PDF en documents WORD avec une précision incroyable.",
+      "selectBtn": "Sélectionner les fichiers WORD",
+      "dropFiles": "Ou déposez les PDF ici",
+      "actionBtn": "Convertir en PDF"
+    },
+    "word_pdf": {
+      "title": "Convertir WORD en PDF",
+      "description": " Facilitez la préparation des fichiers DOC et DOCX en les convertissant en PDF.",
+      "selectBtn": "Sélectionner les fichiers PDF",
+      "dropFiles": "Ou déposez les PDF ici",
+      "actionBtn": "Convertir en WORD"
+    }
   },
   "features": {
     "merge": {
@@ -291,8 +291,12 @@
     }
   },
   "other_features": {
-    "convert_pdf": { "title": "CONVERTIR PDF" },
-    "all_pdf_tools": { "title": "TOUS LES OUTILS PDF" }
+    "convert_pdf": {
+      "title": "CONVERTIR PDF"
+    },
+    "all_pdf_tools": {
+      "title": "TOUS LES OUTILS PDF"
+    }
   },
   "toolTip": {
     "sel_google": "Sélectionner un PDF à partir de Google",

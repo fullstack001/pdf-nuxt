@@ -8,7 +8,7 @@
     "compress_pdf": "Comprimi PDF",
     "convert_pdf": "Converti PDF",
     "blog": "Blog",
-    "copyright": "Copyright PdfDen. Tutti i diritti riservati."
+    "copyright": "2024 PdfDen. Tutti i diritti riservati."
   },
   "page_titles": {
     "landing": {
@@ -293,8 +293,12 @@
     }
   },
   "other_features": {
-    "convert_pdf": { "title": "CONVERTI PDF" },
-    "all_pdf_tools": { "title": "TUTTI GLI STRUMENTI PDF" }
+    "convert_pdf": {
+      "title": "CONVERTI PDF"
+    },
+    "all_pdf_tools": {
+      "title": "TUTTI GLI STRUMENTI PDF"
+    }
   },
   "toolTip": {
     "sel_google": "Seleziona PDF da Google Drive",

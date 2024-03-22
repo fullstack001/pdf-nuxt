@@ -19,7 +19,11 @@
         <!-- <span class="material-icons" style="margin-left: 10px">
           arrow_circle_down
         </span> -->
-        <i class="fa fa-download"  style="margin-left: 10px" aria-hidden="true"></i>
+        <i
+          class="fa fa-download"
+          style="margin-left: 10px"
+          aria-hidden="true"
+        ></i>
       </a>
 
       <div class="continue">
@@ -106,12 +110,12 @@
           {{ $t("page_titles.merge_page.rateSection.title") }}
         </div>
         <div class="rate-star">
-          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03;" aria-hidden="true"></i>
-          <i class="fa fa-star-o" style="color: #ff7c03;" aria-hidden="true"></i>
-        
+          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
+          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
+          <i class="fa fa-star-o" style="color: #ff7c03" aria-hidden="true"></i>
+
           <!-- <span class="material-icons">star</span>
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
@@ -168,6 +172,7 @@
           </div>
           <div class="dialog_description">Instantly download to your phone</div>
           <!-- <qr-code :text="download_urls" :size="250" error-level="H"></qr-code> -->
+          <qrcode-vue :value="download_urls" :size="300" level="H" />
         </md-dialog-content>
 
         <md-dialog-actions>
@@ -192,17 +197,18 @@
 //  import CryptoJS from "crypto-js";
 import VueDropboxPicker from "@/components/DropboxPicker.vue";
 import JSZip from "jszip";
-//import VueQRCodeComponent from "vue-qrcode-component";
+
 import Chart from "@/components/Chart.vue"; // Replace with the correct path
 import GDriveSelector from "@/components/GDriveSelector.vue";
 import SetRate from "@/components/SetRate.vue";
-//Vue.component("qr-code", VueQRCodeComponent);
 
+import QrcodeVue from "qrcode.vue";
 export default {
   components: {
     VueDropboxPicker,
     GDriveSelector,
     Chart,
+    QrcodeVue,
     SetRate,
   },
   props: {
@@ -259,8 +265,9 @@ export default {
   },
   created() {},
   mounted() {
-    console.log(this.$crypto.AES);
-    //this.download_urls = window.location.origin + this.$route.path;
+    console.log(window.location.origin);
+    console.log(this.$route);
+    this.download_urls = window.location.origin + this.$route.fullPath;
     // // Your secret key (should be kept private)
     const secretKey = "mySecretKey123";
 
@@ -270,8 +277,7 @@ export default {
       this.$route.query.param,
       secretKey
     ).toString(this.$crypto.enc.Utf8);
-    console.log("after dec");
-    console.log(decrypted);
+
     const paramObj = JSON.parse(decrypted);
     this.id = paramObj.id;
     this.button_title = paramObj.button_title;
@@ -283,7 +289,6 @@ export default {
     this.reSize = paramObj.resultSize;
     this.downloadURL = `/pdf/download/${this.id}`;
     this.checkFile();
- 
   },
   methods: {
     checkFile() {

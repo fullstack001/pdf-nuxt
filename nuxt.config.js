@@ -52,13 +52,13 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/crypto.js', mode: 'client' },
     { src: '~/plugins/vue-drawing-canvas.js', ssr: false },
+    { src: '~/plugins/rating.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'client' },
-    //   '~/plugins/vue-i18n.js',
+    { src: '~/plugins/crypto.js', mode: 'client' },
+
     '~/plugins/vue-material.js',
     '~/plugins/axios.js',
-    { src: '~/plugins/rating.js', ssr: false },
 
   ],
 
