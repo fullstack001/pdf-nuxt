@@ -116,14 +116,15 @@ export default {
     };
   },
   created() {
-    // if (this.$route.params.title == "New Blog") {
-    //   this.title = this.$route.params.title;
-    // } else if (this.$route.params.title == "Edit Blog") {
-    //   this.title = this.$route.params.title;
-    //   this.fetchData(this.$route.params.id);
+    // if (this.$route.query.title == "New Blog") {
+    //   this.title = this.$route.query.title;
+    // } else if (this.$route.query.title == "Edit Blog") {
+    //   this.title = this.$route.query.title;
+    //   this.fetchData(this.$route.query.title);
     // } else {
     //   this.$router.push({ path: "/admin_dashboard/blogcontent" });
     // }
+    this.fetchData(this.$route.query.title);
   },
   methods: {
     fetchData(id) {
@@ -221,12 +222,12 @@ export default {
             this.$swal("Success!", "New Blog have added", "success");
             this.$nextTick().then(() => {
               // Now, the DOM has been updated, and you can safely execute the next statement
-              this.$router.push({ name: "/admin_dashboard/blogcontent" });
+              this.$router.push({ path: "/admin_dashboard/blogcontent" });
             });
           })
           .catch((err) => {
             console.log(err);
-            this.$router.push({ name: "/admin_dashboard/blogcontent" });
+            this.$router.push({ path: "/admin_dashboard/blogcontent" });
           });
       } else {
         this.$axios
@@ -236,12 +237,12 @@ export default {
             this.$swal("Success!", "Blog have updated", "success");
             this.$nextTick().then(() => {
               // Now, the DOM has been updated, and you can safely execute the next statement
-              this.$router.push({ name: "/admin_dashboard/blogcontent" });
+              this.$router.push({ path: "/admin_dashboard/blogcontent" });
             });
           })
           .catch((err) => {
             console.log(err);
-            this.$router.push({ name: "/admin_dashboard/blogcontent" });
+            this.$router.push({ path: "/admin_dashboard/blogcontent" });
           });
       }
     },

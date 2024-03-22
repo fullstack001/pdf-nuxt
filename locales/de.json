@@ -8,7 +8,7 @@
     "compress_pdf": "PDF komprimieren",
     "convert_pdf": "PDF konvertieren",
     "blog": "Blog",
-    "copyright": "Copyright PdfDen. Alle Rechte vorbehalten."
+    "copyright": "2024 PdfDen. Alle Rechte vorbehalten."
   },
   "page_titles": {
     "landing": {
@@ -145,7 +145,6 @@
       "ele_des": "Über diese Symbolleiste können Sie Elemente neu anordnen, um sie nach hinten oder vor das Dokument zu verschieben.",
       "actionBtn": "PDF bearbeiten"
     },
-
     "pdf_word": {
       "title": "PDF-zu-WORD-Konverter",
       "description": "Konvertieren Sie Ihre PDF-Dokumente mit unglaublicher Genauigkeit in WORD-Dokumente.",
@@ -294,8 +293,12 @@
     }
   },
   "other_features": {
-    "convert_pdf": { "title": "PDF converteren" },
-    "all_pdf_tools": { "title": "ALL PDF TOOLS" }
+    "convert_pdf": {
+      "title": "PDF converteren"
+    },
+    "all_pdf_tools": {
+      "title": "ALL PDF TOOLS"
+    }
   },
   "toolTip": {
     "sel_google": "Selecteer PDF uit Google Drive",

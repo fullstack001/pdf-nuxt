@@ -171,7 +171,7 @@
         <md-tabs md-alignment="centered">
           <md-tab
             id="tab-home"
-            md-icon="pdf"
+            md-icon="picture_as_pdf"
             md-label="Split by range"
             :exact="true"
             @click="rangeSplit"

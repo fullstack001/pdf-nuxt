@@ -222,6 +222,9 @@ export default {
       return {}; // store.state.user;
     },
   },
+  mounted() {
+    console.log(this.$route.path);
+  },
   methods: {
     setUser(user) {
       // store.commit("setUser", user);
@@ -353,6 +356,10 @@ a {
 .nav-list li {
   margin: 0 10px;
 }
+
+.nav-list li a:hover {
+  color: #ff7c03 !important;
+}
 .nav-btn {
   padding: 10px 20px;
   border-radius: 8px;
@@ -373,7 +380,7 @@ a {
 }
 
 .active-link {
-  color: #ff7c03;
+  color: #ff7c03 !important;
 }
 
 .auth-btn {

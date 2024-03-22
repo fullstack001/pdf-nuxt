@@ -38,11 +38,11 @@
 </template>
 
 <script>
-//import RadialProgressBar from "vue-radial-progress";
+import RadialProgressBar from "vue-radial-progress";
 
 export default {
   components: {
-    //RadialProgressBar,
+    RadialProgressBar,
   },
   props: ["resultSize", "originSize"],
   data() {

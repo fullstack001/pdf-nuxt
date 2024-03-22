@@ -4,6 +4,7 @@ import { I18N } from './config'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  mode: 'spa',
   head: {
     titleTemplate: 'pdfden',
     title: 'pdfden',
@@ -52,19 +53,19 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/crypto.js', mode: 'client' },
     { src: '~/plugins/vue-drawing-canvas.js', ssr: false },
+    { src: '~/plugins/rating.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'client' },
-    //   '~/plugins/vue-i18n.js',
+    { src: '~/plugins/crypto.js', mode: 'client' },
+
     '~/plugins/vue-material.js',
     '~/plugins/axios.js',
-    { src: '~/plugins/rating.js', ssr: false },
 
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
+  store: true,
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
@@ -77,7 +78,8 @@ export default {
     ['nuxt-i18n', I18N],
     '@nuxtjs/axios',
     'nuxt-sweetalert2',
-    'vue-sweetalert2/nuxt'
+    'vue-sweetalert2/nuxt',
+
   ],
 
 

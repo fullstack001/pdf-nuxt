@@ -48,7 +48,6 @@ export default {
     },
   },
   created() {
-    console.log(this.$route.path);
     this.fetchDatas();
   },
   methods: {
@@ -78,12 +77,12 @@ export default {
       this.$router.push({
         path: "/admin_dashboard/blogediter",
         query: {
-          title: "Edit Blog",
+          title: blog.title,
           saveType: "update",
           id: blog._id,
         },
       });
-      this.title = "Edit Blog";
+      this.title = blog.title;
       this.editBlog = blog;
       this.saveType = "update";
       this.modalValidate = true;
@@ -98,6 +97,7 @@ export default {
       this.$axios
         .delete(`admin/blog/${blog._id}`)
         .then((res) => {
+          this.fetchDatas();
           this.blogs = this.blogs.filter((item) => item !== blog);
           this.pagination();
         })

@@ -8,7 +8,7 @@
     "compress_pdf": "Compress PDF",
     "convert_pdf": "Convert PDF",
     "blog": "Blog",
-    "copyright": "Copyright PdfDen. All rights reserved."
+    "copyright": "2024 PdfDen. All rights reserved."
   },
   "page_titles": {
     "landing": {
@@ -145,7 +145,6 @@
       "ele_des": "From this toolbar you can reorder elements to move them back or in front of the document.",
       "actionBtn": "Edit PDF"
     },
-
     "pdf_word": {
       "title": "PDF to WORD Converter",
       "description": " Convert your PDF to WORD documents with incredible accuracy.",
@@ -294,8 +293,12 @@
     }
   },
   "other_features": {
-    "convert_pdf": { "title": "Convert PDF" },
-    "all_pdf_tools": { "title": "ALL PDF TOOLS" }
+    "convert_pdf": {
+      "title": "Convert PDF"
+    },
+    "all_pdf_tools": {
+      "title": "ALL PDF TOOLS"
+    }
   },
   "toolTip": {
     "sel_google": "Select PDF from Google Drive",

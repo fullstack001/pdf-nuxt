@@ -15,7 +15,7 @@ import i18n from "./i18n";
 import router from "./routes/routes";
 
 //vuex setup
-import store from "./store/index.js";
+//import store from "./store/index.js";
 
 //check token
 import checkToken from "./checkToken";
@@ -72,7 +72,7 @@ new Vue({
   el: "#app",
   router,
   i18n,
-  store,
+  // store,
   render: (h) => h(App),
   // data: {
   //   Chartist: Chartist,
