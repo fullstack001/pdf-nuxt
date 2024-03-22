@@ -146,7 +146,7 @@ export default {
 
           // this.setUser(user);
           if (user.isAdmin == 1) {
-            this.$router.push("/admin_dashboard");
+            this.$router.push("/admin_dashboard/liveview");
           } else {
             this.$router.push("/");
           }
