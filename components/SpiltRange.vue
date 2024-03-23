@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>{{ $t("page_titles.split_page.rangeMode") }}</h3>
+
     <md-button
       class="md-raised range_btn"
       v-bind:class="custom_show ? 'active_btn' : ''"
@@ -15,6 +16,7 @@
     >
       {{ $t("page_titles.split_page.fixedRange") }}
     </md-button>
+
     <div v-show="custom_show">
       <draggable
         :options="{ animation: 150 }"

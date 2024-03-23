@@ -1,23 +1,25 @@
 <template>
   <div>
-    <radial-progress-bar
-      :diameter="200"
-      :completed-steps="completedSteps"
-      :total-steps="100"
-      :startColor="'#ff7c03'"
-      :stopColor="'#ff7c03'"
-      :innerStrokeColor="'white'"
-      :stroke-width="20"
-      :inner-stroke-width="20"
-      style="margin: auto"
+    <client-only>
+      <radial-progress-bar
+        :diameter="200"
+        :completed-steps="completedSteps"
+        :total-steps="100"
+        :startColor="'#ff7c03'"
+        :stopColor="'#ff7c03'"
+        :innerStrokeColor="'white'"
+        :stroke-width="20"
+        :inner-stroke-width="20"
+        style="margin: auto"
+      >
+        <h2>
+          <b>{{ disRate }} %</b>
+        </h2>
+        <h2 style="margin-top: -93px !important; margin-bottom: 70px">
+          <b>Saved</b>
+        </h2>
+      </radial-progress-bar></client-only
     >
-      <h2>
-        <b>{{ disRate }} %</b>
-      </h2>
-      <h2 style="margin-top: -93px !important; margin-bottom: 70px">
-        <b>Saved</b>
-      </h2>
-    </radial-progress-bar>
     <p>
       Origin Size:
       {{
@@ -38,12 +40,8 @@
 </template>
 
 <script>
-import RadialProgressBar from "vue-radial-progress";
-
 export default {
-  components: {
-    RadialProgressBar,
-  },
+  components: {},
   props: ["resultSize", "originSize"],
   data() {
     return {
@@ -59,7 +57,7 @@ export default {
     ).toFixed(0);
     this.setStep();
   },
-
+  mounted() {},
   methods: {
     setStep() {
       let intervalId = setInterval(() => {

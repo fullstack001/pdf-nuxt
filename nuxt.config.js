@@ -4,7 +4,7 @@ import { I18N } from './config'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  mode: 'spa',
+  //mode: 'spa',
   head: {
     titleTemplate: 'pdfden',
     title: 'pdfden',
@@ -57,6 +57,7 @@ export default {
     { src: '~/plugins/rating.js', ssr: false },
     { src: '~/plugins/vuelidate.js', mode: 'client' },
     { src: '~/plugins/crypto.js', mode: 'client' },
+    { src: '~/plugins/vue-radial.js', mode: 'client' },
 
     '~/plugins/vue-material.js',
     '~/plugins/axios.js',

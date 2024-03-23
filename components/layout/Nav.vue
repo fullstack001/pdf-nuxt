@@ -380,7 +380,11 @@ a {
 }
 
 .active-link {
-  color: #ff7c03 !important;
+  color: #fff !important;
+  background: #ff7c03 !important;
+}
+a.nav-btn.nuxt-link-exact-active.nuxt-link-active.active-link:hover {
+  color: #fff !important;
 }
 
 .auth-btn {
