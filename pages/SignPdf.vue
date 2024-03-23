@@ -10,7 +10,7 @@
       v-if="page_load == 'uploading'"
     />
     <div v-if="file && page_load == 'default'">
-      <!-- <SignComponent
+      <SignComponent
         :pdfUrl="getURL(file)"
         :get_pdf="get_result"
         :currentPage="currentPageNum"
@@ -18,7 +18,7 @@
         @upload="upload_png"
         :sign_obj="sign_obj"
         @editSign="modalValidate = true"
-      /> -->
+      />
     </div>
     <input
       type="file"
@@ -52,7 +52,7 @@
 <script>
 import generateURL from "@/services/generateURL";
 import SignatureModal from "@/components/SignatureModal.vue";
-//import SignComponent from "@/components/SignComponent.vue";
+import SignComponent from "@/components/SignComponent.vue";
 import addImagesToPDF1 from "@/services/add_img_to_pdf1";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
@@ -91,8 +91,8 @@ export default {
   },
   mixins: [fileHandlingMixin],
   components: {
-    //  SignComponent,
-    // SignatureModal,
+    SignComponent,
+    SignatureModal,
     SelectFileComponent,
     Processing,
     Uploading,

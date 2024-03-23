@@ -60,7 +60,6 @@
                 display: inline-flex;
                 margin: auto 0;
                 align-items: center;
-                top: 13px;
                 position: relative;
                 align-content: center;
               "
@@ -116,54 +115,40 @@
           class="reset-draw"
           @click.prevent="
             () => {
-              $refs.VueCanvasDrawing.reset();
-              $refs.VueCanvasDrawing.redraw();
+              $refs.signaturePad.clear();
             }
           "
         >
           <i class="fa-solid fa-trash-can"></i>
         </div>
-        <!-- <vue-drawing-canvas
-          ref="VueCanvasDrawing"
-          :width="640"
-          :height="240"
-          :lineWidth="2"
-          :backgroundColor="'#f5f5fa'"
-          :color="color"
-          :saveAs="'png'"
-        /> -->
-        <canvas
-          ref="myCanvas"
-          width="320"
-          height="120"
-          style="display: none"
-        ></canvas>
+        <SignaturePad ref="signaturePad" :width="600" :height="230" />
+
         <div class="color-panel">
           <span>color</span>
           <div
             class="color-tool active"
             style="background-color: #000"
-            @click="color = '#000'"
+            @click="updateColor('#000')"
           ></div>
           <div
             class="color-tool"
             style="background-color: red"
-            @click="color = 'red'"
+            @click="updateColor('red')"
           ></div>
           <div
             class="color-tool"
             style="background-color: blue"
-            @click="color = 'blue'"
+            @click="updateColor('blue')"
           ></div>
           <div
             class="color-tool"
             style="background-color: green"
-            @click="color = 'green'"
+            @click="updateColor('green')"
           ></div>
           <div
             class="color-tool"
             style="background-color: yellow"
-            @click="color = 'yellow'"
+            @click="updateColor('yellow')"
           ></div>
         </div>
       </div>
@@ -182,9 +167,12 @@
 import html2canvas from "html2canvas";
 import DropFile from "./DropFile.vue";
 
+import SignaturePad from "@/components/SignaturePad";
+
 export default {
   components: {
     DropFile,
+    SignaturePad,
   },
   mounted() {
     this.$refs.textTab.click();
@@ -232,6 +220,9 @@ export default {
     };
   },
   methods: {
+    updateColor(c) {
+      this.$refs.signaturePad.updateColor(c);
+    },
     set_stamp(data) {
       this.upload_img = data;
     },
@@ -364,7 +355,9 @@ canvas {
 .tab button:hover {
   color: red;
 }
-
+input[type="text"] {
+  border: 1px solid !i;
+}
 /* Create an active/current "tab button" class */
 .tab button.active {
   background-color: white;

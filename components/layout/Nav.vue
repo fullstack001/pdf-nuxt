@@ -238,7 +238,7 @@ export default {
     logout() {
       this.showUserPanel = false;
       localStorage.removeItem("token");
-      sessionStorage.removeItem("token");
+      // sessionStorage.removeItem("token");
       this.setUser(null);
       this.$router.push("/");
     },
@@ -380,7 +380,11 @@ a {
 }
 
 .active-link {
-  color: #ff7c03 !important;
+  color: #fff !important;
+  background: #ff7c03 !important;
+}
+a.nav-btn.nuxt-link-exact-active.nuxt-link-active.active-link:hover {
+  color: #fff !important;
 }
 
 .auth-btn {
