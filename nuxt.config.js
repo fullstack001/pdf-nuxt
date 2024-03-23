@@ -6,16 +6,20 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   //mode: 'spa',
   head: {
-    titleTemplate: 'pdfden',
+    titleTemplate: '%s - pdfden',
     title: 'pdfden',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
-      { name: 'description', content: 'PDFden.com - Free Online PDF Tools - Merge, Split, Compress, and More!' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
+      // { charset: 'utf-8' },
+      // { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
+      // { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
+      // { name: 'description', content: 'PDFden.com - Free Online PDF Tools - Merge, Split, Compress, and More!' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },

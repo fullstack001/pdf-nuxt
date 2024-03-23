@@ -238,7 +238,7 @@ export default {
     logout() {
       this.showUserPanel = false;
       localStorage.removeItem("token");
-      sessionStorage.removeItem("token");
+      // sessionStorage.removeItem("token");
       this.setUser(null);
       this.$router.push("/");
     },
