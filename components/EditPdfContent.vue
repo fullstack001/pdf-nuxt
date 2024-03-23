@@ -288,9 +288,9 @@ export default {
 #pdf-preview-list {
   min-width: 200px;
   max-width: 200px;
-  height: 95vh;
   background-color: #fff;
   display: grid;
+  height: min-content;
   overflow-y: auto;
   padding-top: 50px;
 }

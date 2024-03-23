@@ -23,7 +23,7 @@
       />
     </div>
 
-    <div class="tool">
+    <div class="tool" style="margin-left: 20px">
       <input
         type="color"
         name="colorpicker"
@@ -62,5 +62,9 @@ export default {
   position: absolute !important;
   top: 50px !important;
   padding-left: 20%;
+}
+.tool {
+  display: flex !important;
+  align-items: center;
 }
 </style>

@@ -93,4 +93,15 @@ export default {
   top: 50px !important;
   padding-left: 20%;
 }
+.tool {
+  display: flex !important;
+  align-items: center;
+  margin: 10px;
+}
+.toolbar .tool .tool-button:hover,
+.toolbar .tool .tool-button.active {
+  /* background-color: rgb(82, 86, 89); */
+  /* border-color: rgb(82, 86, 89); */
+  color: red !important;
+}
 </style>

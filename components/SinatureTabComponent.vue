@@ -239,44 +239,45 @@ export default {
       document.getElementById(item).style.display = "block";
     },
     saveImage() {
-      var dataURL1 = this.$refs.VueCanvasDrawing.getAllStrokes();
-      if (dataURL1.length == 0) {
-        return null;
-      }
-      const canvas = this.$refs.myCanvas;
-      let ctx = canvas.getContext("2d");
-      for (var j = 0; j < dataURL1.length; j++) {
-        let obj = dataURL1[j];
-        // Apply properties to the context
-        ctx.strokeStyle = obj.color;
-        ctx.lineWidth = obj.width;
-        ctx.lineCap = obj.lineCap;
-        ctx.lineJoin = obj.lineJoin;
-        // ctx.setLineDash(obj.type === "dash" ? [5, 5] : []); // Example dash pattern
+      var dataURL1 = this.$refs.signaturePad.getAllStrokes();
 
-        // Move to the starting point
-        ctx.moveTo(obj.from.x, obj.from.y);
+      // if (dataURL1.length == 0) {
+      //   return null;
+      // }
+      // const canvas = this.$refs.myCanvas;
+      // let ctx = canvas.getContext("2d");
+      // for (var j = 0; j < dataURL1.length; j++) {
+      //   let obj = dataURL1[j];
+      //   // Apply properties to the context
+      //   ctx.strokeStyle = obj.color;
+      //   ctx.lineWidth = obj.width;
+      //   ctx.lineCap = obj.lineCap;
+      //   ctx.lineJoin = obj.lineJoin;
+      //   // ctx.setLineDash(obj.type === "dash" ? [5, 5] : []); // Example dash pattern
 
-        // Draw a path based on coordinates
-        for (var i = 0; i < obj.coordinates.length - 1; i++) {
-          ctx.lineTo(obj.coordinates[i].x / 2, obj.coordinates[i].y / 2);
-          ctx.lineTo(
-            obj.coordinates[i + 1].x / 2,
-            obj.coordinates[i + 1].y / 2
-          );
-        }
-        if (obj.fill) {
-          ctx.fillStyle = obj.color;
-          ctx.fill();
-        } else {
-          ctx.stroke();
-        }
-      }
+      //   // Move to the starting point
+      //   ctx.moveTo(obj.from.x, obj.from.y);
 
-      // Convert canvas content to PNG data URL
-      const dataURL = this.$refs.myCanvas.toDataURL("image/png");
+      //   // Draw a path based on coordinates
+      //   for (var i = 0; i < obj.coordinates.length - 1; i++) {
+      //     ctx.lineTo(obj.coordinates[i].x / 2, obj.coordinates[i].y / 2);
+      //     ctx.lineTo(
+      //       obj.coordinates[i + 1].x / 2,
+      //       obj.coordinates[i + 1].y / 2
+      //     );
+      //   }
+      //   if (obj.fill) {
+      //     ctx.fillStyle = obj.color;
+      //     ctx.fill();
+      //   } else {
+      //     ctx.stroke();
+      //   }
+      // }
 
-      return dataURL;
+      // // Convert canvas content to PNG data URL
+      // const dataURL = this.$refs.myCanvas.toDataURL("image/png");
+
+      return dataURL1;
     },
     async convertToPNG() {
       const textContainer = await document.getElementById(

@@ -21,7 +21,8 @@ export default {
     this.signaturePad = new SignaturePad(canvas, {
       // Set pen color
       // penColor: this.penColor,
-      backgroundColor: "#f5f5fa",
+      //  backgroundColor: "#f5f5fa",
+      backgroundColor: "rgba(0,0,0,0)",
     });
   },
   props: {
@@ -43,8 +44,8 @@ export default {
     clear() {
       this.signaturePad.clear();
     },
-    save() {
-      const data = this.signaturePad.toDataURL();
+    getAllStrokes() {
+      return this.signaturePad.toDataURL();
     },
   },
 };
