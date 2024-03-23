@@ -1,10 +1,9 @@
-
-
-canvas, .canvas-container {
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(43, 41, 41, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(48, 46, 46, 0.75);
-    box-shadow: 5px 5px 5px 0px rgba(87, 81, 81, 0.75);
-} 
+canvas,
+.canvas-container {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(43, 41, 41, 0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(48, 46, 46, 0.75);
+  box-shadow: 5px 5px 5px 0px rgba(87, 81, 81, 0.75);
+}
 
 .toolbar {
   width: 100%;
@@ -69,9 +68,9 @@ button:focus {
 }
 
 .toolbar .tool .tool-button {
-  background-color: #f5f5fa ;
+  background-color: #f5f5fa;
   border: 0px solid rgb(50, 54, 57);
-  color:rgb(50, 54, 57);
+  color: rgb(50, 54, 57);
   cursor: pointer;
 }
 
@@ -81,7 +80,7 @@ button:focus {
 .texttoolbar .tool .tool-button.active {
   /* background-color: rgb(82, 86, 89); */
   /* border-color: rgb(82, 86, 89); */
-  color:red
+  color: red !important
 }
 
 
