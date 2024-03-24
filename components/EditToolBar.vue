@@ -81,7 +81,7 @@
         <i class="fa fa-trash"></i>
       </button>
     </div>
-  <TextToolBar
+    <TextToolBar
       v-if="toolShow == 'text'"
       @set_font_family="set_font_family"
       @set_font_size="set_font_size"
@@ -91,7 +91,7 @@
       @set_font_background_color="set_font_background_color"
       @set_font_underline="set_font_underline"
     />
-     <EditTextToolBar
+    <EditTextToolBar
       v-show="toolShow == 'edit_text'"
       @set_font_family="edit_set_font_family"
       @set_font_size="edit_set_font_size"
@@ -105,7 +105,7 @@
       :underlineProps="underline"
       :fontWeightProps="fontWeight"
     />
-   <ShapeToolBar
+    <ShapeToolBar
       v-show="toolShow == 'shape'"
       @enableAddArrow="enableAddArrow"
       @enableRectangle="enableRectangle"
@@ -113,24 +113,24 @@
       @enableLine="enableAddLine"
       @set_color="set_color"
     />
-      <BrushToolBar
+    <BrushToolBar
       v-show="toolShow == 'brush'"
       @set_color="set_color"
       @set_brushSize="(data) => $emit('set_brushSize', data)"
-    />  
+    />
   </div>
 </template>
 <script>
-  import EditTextToolBar from "./EditTextToolBar.vue";
- import TextToolBar from "./TextToolBar.vue";
-  import ShapeToolBar from "./ShapeToolBar.vue";
- import BrushToolBar from "./BrushToolBar.vue";
+import EditTextToolBar from "./EditTextToolBar.vue";
+import TextToolBar from "./TextToolBar.vue";
+import ShapeToolBar from "./ShapeToolBar.vue";
+import BrushToolBar from "./BrushToolBar.vue";
 import $ from "jquery";
 export default {
   components: {
     EditTextToolBar,
-     TextToolBar,
-   ShapeToolBar,
+    TextToolBar,
+    ShapeToolBar,
     BrushToolBar,
   },
   props: [
@@ -292,7 +292,8 @@ export default {
     renderCanvas() {
       var activeObject =
         this.pdf.fabricObjects[this.pdf.active_canvas].getActiveObject();
-      if (activeObject.text) {
+
+      if (activeObject?.text) {
         this.pdf.fabricObjects[this.pdf.active_canvas].remove(activeObject);
         this.pdf.fabricObjects[this.pdf.active_canvas].add(this.activeObject);
       }

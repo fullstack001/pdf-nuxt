@@ -1,7 +1,7 @@
 <!-- components/SignaturePad.vue -->
 <template>
   <div>
-    <canvas ref="canvas"></canvas>
+    <canvas class="sin" ref="canvas"></canvas>
   </div>
 </template>
 
@@ -50,3 +50,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.sin {
+  background-color: #f5f5fa;
+}
+</style>

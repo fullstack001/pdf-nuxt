@@ -174,6 +174,7 @@ export default {
 };
 </script>
 <style scoped>
+@import "@/assets/css/toolbar.css";
 #colorpicker,
 #colorpicker1 {
   height: 25px !important;
