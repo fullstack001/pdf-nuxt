@@ -637,6 +637,9 @@ export default {
   border: none;
   cursor: pointer;
 }
+.sign_complete_btn {
+  margin-top: 10px !important;
+}
 .sign_responsive_btn {
   display: none;
 }
@@ -787,5 +790,9 @@ h3 {
     top: 80vh;
     right: 10px;
   }
+}
+
+.md-tabs-navigation .md-icon-label {
+  height: 92px !important;
 }
 </style>

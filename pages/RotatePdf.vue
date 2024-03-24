@@ -970,8 +970,6 @@ export default {
 
       Promise.all(promises).then(() => {
         zip.generateAsync({ type: "blob" }).then((content) => {
-          //save on vuex
-
           //upload zip file to server
           const formData = new FormData();
           const blob = new Blob([content], { type: "application/zip" });

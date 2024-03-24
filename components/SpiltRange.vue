@@ -298,4 +298,7 @@ h3 {
   border-bottom: none;
   padding-left: 5px;
 }
+.md-tabs-navigation .md-icon-label {
+  height: 92px !important;
+}
 </style>

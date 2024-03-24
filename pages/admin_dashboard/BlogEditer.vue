@@ -115,7 +115,7 @@ export default {
       blogAvail: true,
     };
   },
-  created() {
+  mounted() {
     // if (this.$route.query.title == "New Blog") {
     //   this.title = this.$route.query.title;
     // } else if (this.$route.query.title == "Edit Blog") {
@@ -127,36 +127,38 @@ export default {
     this.fetchData(this.$route.query.title);
   },
   methods: {
-    fetchData(id) {
+    fetchData(title) {
       this.$axios
-        .get(`/pdf/blog/${id}`)
+        .get(`/pdf/blog/${title}`)
         .then((res) => {
           const blog = res.data.blog;
-          this.imgURL = blog.img;
-          this.blogAvail = blog.available;
-          this.blogTitle = blog.title;
-          this.editorData = blog.content;
-          this.metas = blog.metaData;
-          switch (this.metas.length) {
-            case 0:
-              this.metas = [
-                { title: "", content: "" },
-                { title: "", content: "" },
-                { title: "", content: "" },
-              ];
-              break;
-            case 1:
-              this.metas.push(
-                { title: "", content: "" },
-                { title: "", content: "" }
-              );
-              break;
-            case 2:
-              this.metas.push({ title: "", content: "" });
-              break;
+          if (blog) {
+            this.imgURL = blog?.img || null;
+            this.blogAvail = blog?.available || true;
+            this.blogTitle = blog?.title || "";
+            this.editorData = blog?.content || "";
+            this.metas = blog?.metaData;
+            switch (this.metas.length) {
+              case 0:
+                this.metas = [
+                  { title: "", content: "" },
+                  { title: "", content: "" },
+                  { title: "", content: "" },
+                ];
+                break;
+              case 1:
+                this.metas.push(
+                  { title: "", content: "" },
+                  { title: "", content: "" }
+                );
+                break;
+              case 2:
+                this.metas.push({ title: "", content: "" });
+                break;
 
-            default:
-              break;
+              default:
+                break;
+            }
           }
         })
         .catch((err) => {

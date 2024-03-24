@@ -63,9 +63,10 @@ export default {
     BlogThumbnail,
   },
 
-  async asyncData({ query, $axios }) {
+  async asyncData({ params, $axios }) {
     try {
-      const res = await $axios.get(`/pdf/blog/${query.title}`);
+      const res = await $axios.get(`/pdf/blog/${params.title}`);
+
       const { blog, titles } = res.data;
       return { blog, titles };
     } catch (error) {
@@ -131,18 +132,16 @@ export default {
       const newItem = this.titles[index - 1];
       const modifiedTitle = newItem.title.replace(/ /g, "-");
 
-      const destinationPath = `/blogDetail`;
+      const destinationPath = `/blog`;
 
       if (this.$route.path === destinationPath) {
         // If navigating to the same route, manually trigger a page reload
         window.location.href =
-          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+          window.location.pathname + `/${encodeURIComponent(modifiedTitle)}`;
       } else {
         // Otherwise, navigate to the destination route
-        this.$router.push({
-          path: destinationPath,
-          query: modifiedTitle,
-        });
+
+        this.$router.push("/blog/" + encodeURIComponent(modifiedTitle));
       }
     },
     getNextBlog(id) {
@@ -153,18 +152,16 @@ export default {
       const newItem = this.titles[index + 1];
       const modifiedTitle = newItem.title.replace(/ /g, "-");
 
-      const destinationPath = `/blogDetail`;
+      const destinationPath = `/blog`;
 
       if (this.$route.path === destinationPath) {
         // If navigating to the same route, manually trigger a page reload
         window.location.href =
-          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+          window.location.pathname + `/${encodeURIComponent(modifiedTitle)}`;
       } else {
         // Otherwise, navigate to the destination route
-        this.$router.push({
-          path: destinationPath,
-          query: modifiedTitle,
-        });
+
+        this.$router.push("/blog/" + encodeURIComponent(modifiedTitle));
       }
     },
     formatDate(dateString) {

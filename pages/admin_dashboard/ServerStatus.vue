@@ -20,7 +20,7 @@ export default {
       serverStatus: null,
     };
   },
-  created() {
+  mounted() {
     this.$axios
       .get("/admin/serverstatus")
       .then((res) => {

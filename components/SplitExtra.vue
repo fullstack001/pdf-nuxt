@@ -21,8 +21,9 @@
         {{ maxNum }}{{ $t("page_titles.split_page.extract_des_a") }}
       </div>
       <div v-else>
-        <md-field style="padding: 0 20px">
+        <md-field>
           <md-input
+            class="inputtxt"
             v-model="selectPages"
             placeholder="example:1,5-8"
             @input="setExtract"
@@ -156,5 +157,17 @@ h3 {
   padding: 24px;
   background-color: #def2ff;
   margin: 10px 20px;
+}
+
+.inputtxt {
+  padding: 10px;
+  border: none !important;
+  border-radius: 5px;
+}
+.md-tabs-navigation {
+  height: 80px !important;
+}
+.md-tabs-navigation .md-icon-label {
+  height: 92px !important;
 }
 </style>
