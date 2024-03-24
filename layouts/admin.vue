@@ -223,6 +223,10 @@ body {
   border: solid 1px #ff7c03;
 }
 
+.md-tabs-navigation .md-button {
+  height: 95px !important;
+}
+
 .md-button.md-primary {
   background-color: #ff7c03 !important;
 }

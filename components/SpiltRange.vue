@@ -249,6 +249,7 @@ h3 {
   border-radius: 5px;
   padding: 10px !important;
   height: 48px !important;
+  color: #161616 !important;
   /* color: #ff7c03 !important; */
 }
 
