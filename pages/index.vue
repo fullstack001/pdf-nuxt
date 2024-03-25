@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="tools">
+      {{ $store.state }}
       <!-- section 1 -->
       <h2>{{ $t("page_titles.landing.title1") }}</h2>
       <h4>{{ $t("page_titles.landing.text1") }}</h4>
@@ -67,6 +68,8 @@ import { feature_names } from "../services/feature_name";
 import { getDate, getMonth } from "../services/getDateMonth";
 import BlogThumbnail from "@/components/BlogThumbnail.vue";
 
+import { Store } from "vuex";
+
 export default {
   head() {
     return {
@@ -121,7 +124,8 @@ export default {
     this.fetchBlog();
   },
   mounted() {
-    console.log(this);
+    console.log("sotre............");
+    console.log(Store);
   },
   methods: {
     setMonth(data) {

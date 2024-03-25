@@ -140,7 +140,9 @@
       <md-dialog :md-active.sync="showDialog">
         <md-dialog-title>Copy & Send download link</md-dialog-title>
         <md-dialog-content>
-          <div class="form__group form__group--btn form__group--btn-lg">
+          <div
+            class="form__group form__group--btn form__group--btn-lg copy-items"
+          >
             <div class="input--icon input--world">
               <input
                 id="dlink"
@@ -518,6 +520,13 @@ export default {
 };
 </script>
 <style>
+.copy-items {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+#autoCopy {
+  padding-right: 10px !important;
+}
 .timer {
   display: inline-flex;
   text-align: center;
