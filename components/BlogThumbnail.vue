@@ -81,21 +81,15 @@ export default {
     // },
     goBlogDetail(title, id) {
       const modifiedTitle = title.replace(/ /g, "-");
-      const destinationPath = `/blogDetail`;
+      const destinationPath = `/blog`;
 
       if (this.$route.path === destinationPath) {
         // If navigating to the same route, manually trigger a page reload
         window.location.href =
-          window.location.pathname + `?title=${modifiedTitle}&id=${id}`;
+          window.location.pathname + `/${encodeURIComponent(modifiedTitle)}`;
       } else {
         // Otherwise, navigate to the destination route
-        this.$router.push({
-          path: "/blogDetail",
-          query: {
-            title: modifiedTitle,
-            id: id,
-          },
-        });
+        this.$router.push("/blog/" + encodeURIComponent(modifiedTitle));
       }
     },
   },

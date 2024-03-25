@@ -119,9 +119,10 @@
             id="tab-home"
             md-icon="picture_as_pdf"
             md-label="Split by range"
+            class="abc"
             :exact="true"
             @click="rangeSplit"
-            v-bind:class="extractEdit ? 'active_tab' : ''"
+            v-bind:class="extractEdit ? 'active_tab abc' : 'abc'"
             :md-template-data="{ badge: 1 }"
             md-active-tab
           >
@@ -134,11 +135,12 @@
           </md-tab>
           <md-tab
             id="Extract pages"
+            class="abc"
             md-icon="account_tree"
             md-label="Extract Pages"
             @click="extractSplit"
             :set_disAll="pdf_click"
-            v-bind:class="extractEdit ? '' : 'active_tab'"
+            v-bind:class="extractEdit ? 'abc' : 'active_tab abc'"
           >
             <SplitExtra
               @set_check="set_checkBox"
@@ -173,9 +175,10 @@
             id="tab-home"
             md-icon="picture_as_pdf"
             md-label="Split by range"
+            class="abc"
             :exact="true"
             @click="rangeSplit"
-            v-bind:class="extractEdit ? 'active_tab' : ''"
+            v-bind:class="extractEdit ? 'active_tab abc' : ' abc'"
             :md-template-data="{ badge: 1 }"
             md-active-tab
           >
@@ -190,9 +193,10 @@
             id="Extract pages"
             md-icon="account_tree"
             md-label="Extract Pages"
+            class="abc"
             @click="extractSplit"
             :set_disAll="pdf_click"
-            v-bind:class="extractEdit ? '' : 'active_tab'"
+            v-bind:class="extractEdit ? 'abc' : 'active_tab abc'"
           >
             <SplitExtra
               @set_check="set_checkBox"
@@ -637,6 +641,9 @@ export default {
   border: none;
   cursor: pointer;
 }
+.sign_complete_btn {
+  margin-top: 10px !important;
+}
 .sign_responsive_btn {
   display: none;
 }
@@ -787,5 +794,9 @@ h3 {
     top: 80vh;
     right: 10px;
   }
+}
+
+.md-tabs-navigation .md-icon-label {
+  height: 92px !important;
 }
 </style>

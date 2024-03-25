@@ -105,17 +105,16 @@ export default {
       //   },
       // });
 
-      this.$router.push({
-        path: "/blogDetail",
-        // this.$route.params.locale == undefined
-        //   ? "download"
-        //   : "en_download",
-        query: {
-          title: modifiedTitle,
-          id: id,
-        },
-        force: true,
-      });
+      this.$router.push("/blog/" + encodeURIComponent(modifiedTitle));
+
+      // this.$router.push({
+      //   path: "/blogDetail",
+      //   // this.$route.params.locale == undefined
+      //   //   ? "download"
+      //   //   : "en_download",
+      //   query: modifiedTitle,
+      //   force: true,
+      // });
     },
   },
 };

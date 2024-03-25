@@ -148,7 +148,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$store);
+    // console.log(this.$store);
   },
   validations: {
     userForm: {
@@ -232,7 +232,7 @@ input {
   color: #fff;
 }
 .sign-right {
-  padding: 136px;
+  padding: 30px 136px;
   background-color: #f2f3f8;
 }
 .title {
@@ -241,12 +241,12 @@ input {
 }
 
 @media (max-width: 960px) {
-  .sign-right[data-v-a3068648] {
+  .sign-right {
     padding: 40px;
     background-color: #f2f3f8;
   }
 
-  .sign_panel[data-v-a3068648] {
+  .sign_panel {
     background-color: #fffdfd;
     padding: 30px;
     padding-top: 30px;
@@ -255,5 +255,8 @@ input {
     margin: 0rem !important;
     width: 235px;
   }
+}
+.title {
+  line-height: 27px !important;
 }
 </style>

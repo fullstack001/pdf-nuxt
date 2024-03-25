@@ -249,6 +249,7 @@ h3 {
   border-radius: 5px;
   padding: 10px !important;
   height: 48px !important;
+  color: #161616 !important;
   /* color: #ff7c03 !important; */
 }
 
@@ -297,5 +298,8 @@ h3 {
   border-right: none;
   border-bottom: none;
   padding-left: 5px;
+}
+.md-tabs-navigation .md-icon-label {
+  height: 92px !important;
 }
 </style>

@@ -120,6 +120,9 @@ export default {
   created() {
     this.fetchBlog();
   },
+  mounted() {
+    console.log(this);
+  },
   methods: {
     setMonth(data) {
       return getMonth(data);

@@ -51,7 +51,7 @@ export default {
       this.pagination();
     },
   },
-  created() {
+  mounted() {
     this.fetchDatas();
   },
   methods: {

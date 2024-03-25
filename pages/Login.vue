@@ -77,7 +77,9 @@
           </button>
         </div>
         <!-- form-group// -->
-        <p class="text-center">Have an account? <a href="">Log In</a></p>
+        <p class="text-center">
+          Don't have account? <a href="/signup">Log Up</a>
+        </p>
       </form>
     </div>
     <div class="sign-right col-md-5 padding-auto" p-5>
@@ -195,11 +197,15 @@ input {
   color: #fff;
 }
 .sign-right {
-  padding: 136px;
+  padding: 30px 136px;
   background-color: #f2f3f8;
 }
 .title {
   font-size: 30px;
   font-weight: bold;
+}
+
+.title {
+  line-height: 27px !important;
 }
 </style>
