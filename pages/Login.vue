@@ -146,6 +146,8 @@ export default {
           const decoded = VueJwtDecode.decode(res.data.token);
           const user = decoded.user;
 
+          this.$store.dispatch("setUser", user);
+
           // this.setUser(user);
           if (user.isAdmin == 1) {
             this.$router.push("/admin_dashboard/liveview");

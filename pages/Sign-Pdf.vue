@@ -61,6 +61,7 @@ import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/sign_pdf.svg";
 export default {
+  layout: "nofooter",
   head() {
     return {
       title:

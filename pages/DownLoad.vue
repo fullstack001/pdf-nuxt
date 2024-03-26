@@ -104,23 +104,17 @@
         </div>
       </div>
     </div>
-    <div class="rate-secttion">
+    <!-- <div class="rate-secttion">
       <div class="block__container">
         <div class="description-title">
           {{ $t("page_titles.merge_page.rateSection.title") }}
         </div>
-        <div class="rate-star">
-          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
-          <i class="fa fa-star" style="color: #ff7c03" aria-hidden="true"></i>
-          <i class="fa fa-star-o" style="color: #ff7c03" aria-hidden="true"></i>
-
-          <!-- <span class="material-icons">star</span>
+        <div class="rate-star"> 
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
-          <span class="material-icons">star_outline</span> -->
+          <span class="material-icons">star</span>
+          <span class="material-icons">star_outline</span>
         </div>
         <div class="rate-reviews">
           <span class="rate-score"> 4.8/5 - </span>
@@ -129,7 +123,7 @@
           </span>
         </div>
       </div>
-    </div>
+    </div> -->
     <md-dialog-alert
       :md-active.sync="show_noti"
       md-content="PDF file  has been deleted!"

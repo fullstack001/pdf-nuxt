@@ -15,43 +15,43 @@
           </div>
           <div class="footer-link border-right">
             <LocalizedLink
-              to="/mergepdf"
+              to="/merge-pdf"
               class="nav-btn"
-              :class="{ 'active-link': isActive('/mergepdf') }"
+              :class="{ 'active-link': isActive('/merge-pdf') }"
             >
               {{ $t("features.merge.title") }}
             </LocalizedLink>
           </div>
           <div class="footer-link border-right">
             <LocalizedLink
-              to="/splitpdf"
+              to="/split-pdf"
               class="nav-btn"
-              :class="{ 'active-link': isActive('/splitpdf') }"
+              :class="{ 'active-link': isActive('/split-pdf') }"
             >
               {{ $t("features.split.title") }}
             </LocalizedLink>
           </div>
           <div class="footer-link border-right">
             <LocalizedLink
-              to="/compresspdf"
+              to="/compress-pdf"
               class="nav-btn"
-              :class="{ 'active-link': isActive('/compresspdf') }"
+              :class="{ 'active-link': isActive('/compress-pdf') }"
             >
               {{ $t("features.compress.title") }}
             </LocalizedLink>
           </div>
           <div class="footer-link border-right">
-            <LocalizedLink to="wordtopdf" class="nav-btn">
+            <LocalizedLink to="word-to-pdf" class="nav-btn">
               {{ $t("features.word_pdf.title") }}
             </LocalizedLink>
           </div>
           <div class="footer-link border-right">
-            <LocalizedLink to="pdftoword" class="nav-btn">
+            <LocalizedLink to="pdf-to-word" class="nav-btn">
               {{ $t("features.pdf_word.title") }}
             </LocalizedLink>
           </div>
           <div class="footer-link border-right">
-            <LocalizedLink to="rotatepdf" class="nav-btn">
+            <LocalizedLink to="rotate-pdf" class="nav-btn">
               {{ $t("features.rotate.title") }}
             </LocalizedLink>
           </div>

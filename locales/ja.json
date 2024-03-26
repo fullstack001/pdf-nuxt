@@ -32,22 +32,22 @@
       }
     },
     "signUp": {
-       "create": "新しいアカウントを作成",
-       "name_req": "名前フィールドは必須です",
-       "fullName": "フルネーム",
-       "email": "メールアドレス",
-       "email_req": "電子メールフィールドは必須です",
-       "email_type": "有効な電子メールを入力してください",
-       "email_exi": "ユーザーはすでに存在します",
-       "pass": "パスワードを作成",
-       "pass_req": "パスワードフィールドは必須です",
-       "pass_length": "パスワードの長さは少なくとも 6 文字である必要があります",
-       "signUp": "サインアップ",
-       "have_acc": "アカウントをお持ちですか?",
-       "login": "ログイン",
-       "tool_title": "生産的な人々のための PDF ツール",
-       "tool_des": " PDFDen を使用すると、PDF ファイルの変換、編集、電子署名、保護を迅速かつ簡単に行うことができます。作業場所に関係なく、ドキュメントを効果的に管理するためのツール一式をお楽しみください。"
-     },
+      "create": "新しいアカウントを作成",
+      "name_req": "名前フィールドは必須です",
+      "fullName": "フルネーム",
+      "email": "メールアドレス",
+      "email_req": "電子メールフィールドは必須です",
+      "email_type": "有効な電子メールを入力してください",
+      "email_exi": "ユーザーはすでに存在します",
+      "pass": "パスワードを作成",
+      "pass_req": "パスワードフィールドは必須です",
+      "pass_length": "パスワードの長さは少なくとも 6 文字である必要があります",
+      "signUp": "サインアップ",
+      "have_acc": "アカウントをお持ちですか?",
+      "login": "ログイン",
+      "tool_title": "生産的な人々のための PDF ツール",
+      "tool_des": " PDFDen を使用すると、PDF ファイルの変換、編集、電子署名、保護を迅速かつ簡単に行うことができます。作業場所に関係なく、ドキュメントを効果的に管理するためのツール一式をお楽しみください。"
+    },
     "merge_page": {
       "title": "PDF ファイルを結合",
       "description": "最も簡単な PDF 結合を使用して、希望する順序で PDF を結合します。",
@@ -117,24 +117,24 @@
         "description3": "Mac、Windows、Android、iOS で動作します。"
       }
     },
-   "rotate_page": {
-       "title": "PDF を回転",
-       "description": "必要に応じて PDF を回転します。複数の PDF を一度に回転することもできます!",
-       "selectBtn": "PDF ファイルを選択",
-       "dropFiles": "または PDF をここにドロップします",
-       "rotatePdf": "PDF を回転",
-       "info_a": "下の PDF ファイルにマウスを置くと、a",
-       "info_b": "アイコンが表示されます。矢印をクリックして PDF を回転します。",
-       "set_rotate": "回転するファイルを選択してください:",
-       "reset": "すべてリセット",
-       "all": "すべて",
-       "portrait": "ポートレート",
-       "landscape": "風景",
-       "rotation": "回転",
-       "right":"そう",
-       "left": "左",
-       "actionBtn": "PDF を回転"
-     },
+    "rotate_page": {
+      "title": "PDF を回転",
+      "description": "必要に応じて PDF を回転します。複数の PDF を一度に回転することもできます!",
+      "selectBtn": "PDF ファイルを選択",
+      "dropFiles": "または PDF をここにドロップします",
+      "rotatePdf": "PDF を回転",
+      "info_a": "下の PDF ファイルにマウスを置くと、a",
+      "info_b": "アイコンが表示されます。矢印をクリックして PDF を回転します。",
+      "set_rotate": "回転するファイルを選択してください:",
+      "reset": "すべてリセット",
+      "all": "すべて",
+      "portrait": "ポートレート",
+      "landscape": "風景",
+      "rotation": "回転",
+      "right": "そう",
+      "left": "左",
+      "actionBtn": "PDF を回転"
+    },
     "split_page": {
       "title": "PDF ファイルを分割",
       "description": "1 ページまたはセット全体を分割して、独立した PDF ファイルに簡単に変換できます。",
@@ -200,65 +200,65 @@
       "actionBtn": "PDF を編集"
     },
     "pdf_word": {
-       "title": "PDF から WORD へのコンバーター",
-       "description": " 信じられないほどの精度で PDF を WORD ドキュメントに変換します。",
-       "selectBtn": "WORD ファイルを選択",
-       "dropFiles": "または PDF をここにドロップします",
-       "actionBtn": "PDF に変換"
-     },
-     "word_pdf": {
-       "title": "WORD を PDF に変換",
-       "description": " DOC および DOCX ファイルを PDF に変換することで、簡単に準備できるようにします。",
-       "selectBtn": "PDF ファイルを選択",
-       "dropFiles": "または PDF をここにドロップします",
-       "actionBtn": "WORD に変換"
-     }
+      "title": "PDF から WORD へのコンバーター",
+      "description": " 信じられないほどの精度で PDF を WORD ドキュメントに変換します。",
+      "selectBtn": "WORD ファイルを選択",
+      "dropFiles": "または PDF をここにドロップします",
+      "actionBtn": "PDF に変換"
+    },
+    "word_pdf": {
+      "title": "WORD を PDF に変換",
+      "description": " DOC および DOCX ファイルを PDF に変換することで、簡単に準備できるようにします。",
+      "selectBtn": "PDF ファイルを選択",
+      "dropFiles": "または PDF をここにドロップします",
+      "actionBtn": "WORD に変換"
+    }
   },
   "features": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "PDFのマージ",
       "description": "最も簡単なPDF結合ツールで、PDFを好きな順序で結合できます。",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "PDFを分割する",
       "description": "独立したPDFファイルに簡単に変換するために、1ページまたはセット全体を分離する",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "PDFを圧縮する",
       "description": "PDFの品質を最大限に最適化しながらファイルサイズを縮小",
       "file": "compress_pdf.svg"
     },
     "word_pdf": {
-      "name": "wordtopdf",
+      "name": "wordto-pdf",
       "title": "WordからPDFへ",
       "description": "DOCやDOCXファイルをPDFに変換して読みやすくします。",
       "file": "word_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDFからWordへ",
       "description": "PDFファイルを編集しやすいDOCやDOCX文書に簡単に変換できます。変換されたWORD文書はほぼ100％正確です。",
       "file": "pdf_word.svg"
     },
     "sign": {
-      "name": "signpdf",
+      "name": "sign-pdf",
       "title": "PDFに署名",
       "description": "自分で署名するか、他の人に電子署名を依頼する。",
       "file": "sign_pdf.svg"
     },
     "edit": {
-      "name": "editpdf",
+      "name": "edit-pdf",
       "title": "PDFを編集する",
       "description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content.",
       "file": "edit_pdf.svg"
     },
     "rotate": {
-      "name": "rotatepdf",
+      "name": "rotate-pdf",
       "title": "PDFを回転",
       "description": "PDF 文書にテキスト、画像、図形、またはフリーハンドの注釈を追加します。追加したコンテンツのサイズ、フォント、色を編集します。",
       "file": "rotate_pdf.svg"
@@ -266,19 +266,19 @@
   },
   "onlines": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "PDFのマージ",
       "description": "最も簡単なPDF結合ツールで、PDFを好きな順序で結合できます。",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "PDFを分割する",
       "description": "独立したPDFファイルに簡単に変換するために、1ページまたはセット全体を分離する",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "PDFを圧縮する",
       "description": "PDFの品質を最大限に最適化しながらファイルサイズを縮小",
       "file": "compress_pdf.svg"
@@ -291,8 +291,12 @@
     }
   },
   "other_features": {
-    "convert_pdf": { "title": "PDF変換" },
-    "all_pdf_tools": { "title": "すべてのPDFツール" }
+    "convert_pdf": {
+      "title": "PDF変換"
+    },
+    "all_pdf_tools": {
+      "title": "すべてのPDFツール"
+    }
   },
   "toolTip": {
     "sel_google": "GoogleからPDFを選択",

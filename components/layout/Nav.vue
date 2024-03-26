@@ -13,9 +13,9 @@
           <ul class="nav-list">
             <li>
               <LocalizedLink
-                to="/mergepdf"
+                to="/merge-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/mergepdf') }"
+                :class="{ 'active-link': isActive('/merge-pdf') }"
               >
                 {{ $t("features.merge.title") }}
               </LocalizedLink>
@@ -23,45 +23,45 @@
 
             <li>
               <LocalizedLink
-                to="/splitpdf"
+                to="/split-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/splitpdf') }"
+                :class="{ 'active-link': isActive('/split-pdf') }"
               >
                 {{ $t("features.split.title") }}
               </LocalizedLink>
             </li>
             <li>
               <LocalizedLink
-                to="/compresspdf"
+                to="/compress-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/compresspdf') }"
+                :class="{ 'active-link': isActive('/compress-pdf') }"
               >
                 {{ $t("features.compress.title") }}
               </LocalizedLink>
             </li>
             <li>
               <LocalizedLink
-                to="/signpdf"
+                to="/sign-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/signpdf') }"
+                :class="{ 'active-link': isActive('/sign-pdf') }"
               >
                 {{ $t("features.sign.title") }}
               </LocalizedLink>
             </li>
             <li>
               <LocalizedLink
-                to="/editpdf"
+                to="/edit-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/editpdf') }"
+                :class="{ 'active-link': isActive('/edit-pdf') }"
               >
                 {{ $t("features.edit.title") }}
               </LocalizedLink>
             </li>
             <li>
               <LocalizedLink
-                to="/rotatepdf"
+                to="/rotate-pdf"
                 class="nav-btn"
-                :class="{ 'active-link': isActive('/rotatepdf') }"
+                :class="{ 'active-link': isActive('/rotate-pdf') }"
               >
                 {{ $t("features.rotate.title") }}
               </LocalizedLink>
@@ -87,12 +87,12 @@
 
                 <md-speed-dial-content style="z-index: 1000">
                   <md-button class="nav-btn">
-                    <LocalizedLink to="wordtopdf">
+                    <LocalizedLink to="word-to-pdf">
                       {{ $t("features.word_pdf.title") }}
                     </LocalizedLink>
                   </md-button>
                   <md-button class="nav-btn">
-                    <LocalizedLink to="pdftoword">
+                    <LocalizedLink to="pdf-to-word">
                       {{ $t("features.pdf_word.title") }}
                     </LocalizedLink>
                   </md-button>
@@ -149,43 +149,43 @@
       <div :class="{ 'navbar-open': isOpen }">
         <ul class="mobile-nav-list" @mouseleave="isOpen = false">
           <li>
-            <LocalizedLink to="/mergepdf">
+            <LocalizedLink to="/merge-pdf">
               {{ $t("features.merge.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/splitpdf">
+            <LocalizedLink to="/split-pdf">
               {{ $t("features.split.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/compresspdf">
+            <LocalizedLink to="/compress-pdf">
               {{ $t("features.compress.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/rotatepdf">
+            <LocalizedLink to="/rotate-pdf">
               {{ $t("features.rotate.title") }}
             </LocalizedLink>
           </li>
 
           <li>
-            <LocalizedLink to="/wordtopdf">
+            <LocalizedLink to="/wordto-pdf">
               {{ $t("features.word_pdf.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/pdftoword">
+            <LocalizedLink to="/pdf-to-word">
               {{ $t("features.pdf_word.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/signpdf">
+            <LocalizedLink to="/sign-pdf">
               {{ $t("features.sign.title") }}
             </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/editpdf">
+            <LocalizedLink to="/edit-pdf">
               {{ $t("features.edit.title") }}
             </LocalizedLink>
           </li>
@@ -219,11 +219,11 @@ export default {
   components: { LocalizedLink },
   computed: {
     user() {
-      return {}; // store.state.user;
+      return this.$store.state["user"];
     },
   },
   mounted() {
-    console.log(this.$route.path);
+    // console.log(this);
   },
   methods: {
     setUser(user) {
@@ -358,7 +358,8 @@ a {
 }
 
 .nav-list li a:hover {
-  color: #ff7c03 !important;
+  color: #fff !important;
+  background-color: #ff7c03 !important;
 }
 .nav-btn {
   padding: 10px 20px;

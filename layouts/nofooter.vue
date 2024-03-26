@@ -4,7 +4,6 @@
     <div v-else>
       <Nav />
       <nuxt />
-      <Footer />
     </div>
   </div>
 </template>
@@ -15,7 +14,7 @@ import Footer from "@/components/layout/Footer.vue";
 import EventBus from "@/config/EventBus";
 
 export default {
-  name: "app",
+  name: "nofooter",
   computed: {
     locale() {
       return this.$route.params && this.$route.params.locale

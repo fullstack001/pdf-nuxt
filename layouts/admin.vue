@@ -114,7 +114,7 @@ export default {
   methods: {
     handleBeforeUnload() {
       // Remove the localStorage item when the website is closed
-      localStorage.removeItem("token");
+      // localStorage.removeItem("token");
     },
 
     isActive(path) {

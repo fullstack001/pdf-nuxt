@@ -218,49 +218,49 @@
   },
   "features": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Sammanfoga",
       "description": "Kombinera PDF-filer i den ordning du vill ha med den enklaste PDF-sammanslagningen som finns tillgänglig",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "Dela",
       "description": "Separera en sida eller en hel uppsättning för enkel konvertering till oberoende PDF-filer",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Komprimera",
       "description": "Minska filstorleken samtidigt som du optimerar för maximal PDF-kvalitet",
       "file": "compress_pdf.svg"
     },
     "word_pdf": {
-      "name": "wordtopdf",
+      "name": "wordto-pdf",
       "title": "Word till",
       "description": "Gör DOC- och DOCX-filer lätta att läsa genom att konvertera dem till PDF.",
       "file": "word_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF till Word",
       "description": "Konvertera enkelt dina PDF-filer till lättredigerade DOC- och DOCX-dokument. Det konverterade WORD-dokumentet är nästan 100 % korrekt.",
       "file": "pdf_word.svg"
     },
     "sign": {
-      "name": "signpdf",
+      "name": "sign-pdf",
       "title": "Skriv under",
       "description": "Signera dig själv eller begär elektroniska signaturer från andra.",
       "file": "sign_pdf.svg"
     },
     "edit": {
-      "name": "editpdf",
+      "name": "edit-pdf",
       "title": "Redigera",
       "description": "Lägg till text, bilder, former eller frihandsanteckningar till ett PDF-dokument. Redigera storleken, teckensnittet och färgen på det tillagda innehållet.",
       "file": "edit_pdf.svg"
     },
     "rotate": {
-      "name": "rotatepdf",
+      "name": "rotate-pdf",
       "title": "Rotera",
       "description": "Rotera dina PDF-filer som du behöver dem. Du kan till och med rotera flera PDF-filer samtidigt!",
       "file": "rotate_pdf.svg"
@@ -268,25 +268,25 @@
   },
   "onlines": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Sammanfoga PDF",
       "description": "Kombinera PDF-filer i den ordning du vill ha med den enklaste PDF-sammanslagningen som finns tillgänglig",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "Dela PDF",
       "description": "Separera en sida eller en hel uppsättning för enkel konvertering till oberoende PDF-filer",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Komprimera PDF",
       "description": "Minska filstorleken samtidigt som du optimerar för maximal PDF-kvalitet",
       "file": "compress_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF till Word",
       "description": "Konvertera enkelt dina PDF-filer till lättredigerade DOC- och DOCX-dokument. Det konverterade WORD-dokumentet är nästan 100 % korrekt.",
       "file": "pdf_word.svg"

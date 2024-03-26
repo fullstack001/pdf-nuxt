@@ -238,6 +238,7 @@ import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/split_pdf.svg";
 
 export default {
+  layout: "nofooter",
   head() {
     return {
       title: "Split PDF – Separate Pages in your PDF File for Free",
@@ -690,6 +691,7 @@ export default {
 h3 {
   font-weight: 500;
   margin-bottom: 50px;
+  border-bottom: 1px solid #ccc;
 }
 
 .social_btn i {

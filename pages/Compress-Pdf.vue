@@ -215,6 +215,7 @@ import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/compress_pdf.svg";
 
 export default {
+  layout: "nofooter",
   head() {
     return {
       title: "Compress PDF - Reduce PDF File Size for Free ",

@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="tools">
-      {{ $store.state }}
       <!-- section 1 -->
       <h2>{{ $t("page_titles.landing.title1") }}</h2>
       <h4>{{ $t("page_titles.landing.text1") }}</h4>
@@ -46,9 +45,9 @@
               </div>
             </div>
             <div>
-              <a href="" class="btn premium_btn"
-                >{{ $t("page_titles.landing.section2.button") }}
-              </a>
+              <nuxt-link class="btn premium_btn" to="/ComingSoon">{{
+                $t("page_titles.landing.section2.button")
+              }}</nuxt-link>
             </div>
           </div>
           <div class="md-layout-item">
@@ -123,10 +122,7 @@ export default {
   created() {
     this.fetchBlog();
   },
-  mounted() {
-    console.log("sotre............");
-    console.log(Store);
-  },
+  mounted() {},
   methods: {
     setMonth(data) {
       return getMonth(data);

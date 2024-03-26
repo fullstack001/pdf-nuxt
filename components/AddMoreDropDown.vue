@@ -6,6 +6,7 @@
       md-direction="bottom"
     >
       <div
+        @click="open_add_local"
         class="badge-container md-primary"
         md-content="4"
         v-if="pdfCounts > 0"

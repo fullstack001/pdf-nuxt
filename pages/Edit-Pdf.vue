@@ -61,6 +61,7 @@ import getPageNumber from "@/services/getPageNumber";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/edit_pdf.svg";
 export default {
+  layout: "nofooter",
   head() {
     return {
       title:
@@ -274,6 +275,9 @@ export default {
 
 h3 {
   font-weight: 500;
+}
+.edit-title {
+  border-bottom: 1px solid #ccc !important;
 }
 
 @media (max-width: 640px) {
