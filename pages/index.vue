@@ -45,9 +45,9 @@
               </div>
             </div>
             <div>
-              <a href="" class="btn premium_btn"
-                >{{ $t("page_titles.landing.section2.button") }}
-              </a>
+              <nuxt-link class="btn premium_btn" to="/ComingSoon">{{
+                $t("page_titles.landing.section2.button")
+              }}</nuxt-link>
             </div>
           </div>
           <div class="md-layout-item">
@@ -66,6 +66,8 @@ import FeatureTitle from "@/components/FeatureTitle.vue";
 import { feature_names } from "../services/feature_name";
 import { getDate, getMonth } from "../services/getDateMonth";
 import BlogThumbnail from "@/components/BlogThumbnail.vue";
+
+import { Store } from "vuex";
 
 export default {
   head() {
@@ -120,9 +122,7 @@ export default {
   created() {
     this.fetchBlog();
   },
-  mounted() {
-    console.log(this);
-  },
+  mounted() {},
   methods: {
     setMonth(data) {
       return getMonth(data);

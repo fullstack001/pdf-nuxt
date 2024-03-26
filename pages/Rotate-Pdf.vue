@@ -595,6 +595,7 @@ import SvgImage from "@/assets/feature_img/rotate_pdf.svg";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 
 export default {
+  layout: "nofooter",
   head() {
     return {
       title: "Rotate PDF – Rotate PDF Pages for Free | Online PDF Rotator ",
@@ -1224,6 +1225,7 @@ ul {
 h3 {
   margin: 20px auto;
   font-weight: 600;
+  border-bottom: 1px solid #ccc;
 }
 
 .add-more {

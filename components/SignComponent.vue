@@ -1101,5 +1101,7 @@ img {
   margin: 20px 14px;
   min-height: 200px;
 }
+h3 {
+  border-bottom: 1px solid #ccc !important;
+}
 </style>
-./SignComponent.vue/index.js

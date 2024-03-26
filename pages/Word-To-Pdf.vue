@@ -21,7 +21,7 @@
       class="hidden-input"
       @change="onChange"
       ref="file"
-      accept=".pdf"
+      accept=".doc, .docx"
     />
     <SelectFileComponent
       v-if="page_load == 'default' && !file_objs.length"
@@ -29,63 +29,71 @@
       @onPickedDropbox="onPickedDropbox"
       @onPickedGoogleDriver="onPickedGoogleDriver"
       @handleFile="handleFiles"
-      :title="$t('page_titles.pdf_word.title')"
-      :description="$t('page_titles.pdf_word.description')"
+      :title="$t('page_titles.word_pdf.title')"
+      :description="$t('page_titles.word_pdf.description')"
       :featureImgUrl="svgUrl"
     />
+
     <div
-      class="pw-files-list"
-      v-if="page_load == 'default' && file_objs.length"
+      class="wp-files-list"
+      v-show="page_load == 'default' && file_objs.length"
     >
-      <div class="preview-container mt-4">
-        <draggable
-          v-model="file_objs"
-          :options="{ animation: 150 }"
-          class="md-layout"
-        >
-          <div
-            class="preview-card md-layout-item"
-            v-for="(file_obj, index) in file_objs"
-            :key="file_obj.file.name + index"
-            @mouseover="show_file_action = file_obj.file.name + index"
-            @mouseleave="show_file_action = null"
+      <div class="preview-container mt-4" v-if="file_objs.length">
+        <div class="badge-container md-primary" md-content="4">
+          <draggable
+            v-model="file_objs"
+            :options="{ animation: 150 }"
+            class="md-layout"
           >
             <div
-              class="file__actions"
-              v-show="show_file_action == file_obj.file.name + index"
+              class="preview-card md-layout-item"
+              v-for="(file, index) in file_objs"
+              :key="file.file.name + index"
+              @mouseover="show_file_action = file.file.name + index"
+              @mouseleave="show_file_action = null"
             >
-              <a
-                class="file__btn remove tooltip--top tooltip"
-                title="Remove this file"
-                data-title="Remove this file"
-                @click="remove(file_objs.indexOf(file_obj))"
+              <div
+                class="file__actions"
+                v-show="show_file_action == file.file.name + index"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
+                <a
+                  class="file__btn remove tooltip--top tooltip"
+                  title="Remove this file"
+                  data-title="Remove this file"
+                  @click="remove(file_objs.indexOf(file))"
                 >
-                  <polygon
-                    fill="#fff"
-                    fill-rule="evenodd"
-                    points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"
-                  ></polygon>
-                </svg>
-              </a>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                  >
+                    <polygon
+                      fill="#fff"
+                      fill-rule="evenodd"
+                      points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"
+                    ></polygon>
+                  </svg>
+                </a>
+              </div>
+              <div :id="'id' + index" :style="'id' + index">
+                <img
+                  src="@/assets/img/word.png"
+                  srcset="@/assets/img/word.png"
+                  alt="language selector icon"
+                  class="word_preview_img"
+                />
+              </div>
+              <div class="prew_title">
+                {{
+                  file.file.name.length > 19
+                    ? file.file.name.substring(0, 20) + "..."
+                    : file.file.name
+                }}
+              </div>
             </div>
-            <div :id="'id' + index" :style="'id' + index">
-              <PdfViewer :fileUrl="getURL(file_obj)" />
-            </div>
-            <div class="prew_title">
-              {{
-                file_obj.file.name.length > 19
-                  ? file_obj.file.name.substring(0, 20) + "..."
-                  : file_obj.file.name
-              }}
-            </div>
-          </div>
-        </draggable>
+          </draggable>
+        </div>
       </div>
       <div class="add-more">
         <div class="add-more-area">
@@ -104,81 +112,78 @@
         </div>
       </div>
     </div>
-
     <div
-      class="pw_tool__sidebar"
-      style="overflow-y: auto"
-      v-if="page_load == 'default' && file_objs.length > 0"
+      class="wp_sidebar"
+      v-show="file_objs.length > 0 && page_load == 'default'"
     >
-      <h3 class="text-center">PDF to Word</h3>
-      <button class="pw-btn" @click="convertToWord">
-        {{ $t("page_titles.pdf_word.actionBtn") }}
-      </button>
+      <h3 class="text-center">Word to PDF</h3>
+      <div class="option__panel option__panel--active">
+        <button class="wp_btn" @click="convertToPdf">
+          {{ $t("page_titles.word_pdf.actionBtn") }}
+        </button>
+      </div>
     </div>
     <button
       v-show="file_objs.length > 0 && page_load == 'default'"
-      class="pw_responsive_btn"
-      @click="convertToWord"
+      class="wp_responsive_btn"
+      @click="convertToPdf"
     >
-      {{ $t("page_titles.pdf_word.actionBtn") }}
+      {{ $t("page_titles.word_pdf.actionBtn") }}
     </button>
   </div>
 </template>
 
 <script>
-import PdfViewer from "@/components/PdfViewer.vue";
 import draggable from "vuedraggable";
-import generateURL from "@/services/generateURL";
 import AddMoreDropDown from "@/components/AddMoreDropDown.vue";
 import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
 import { fileHandlingMixin } from "@/config/globalMixin.js";
+import SvgImage from "@/assets/feature_img/word_pdf.svg";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
-import SvgImage from "@/assets/feature_img/pdf_word.svg";
 
 export default {
   head() {
     return {
-      title: "Convert PDF to Word – Free PDF to Word Converter",
+      title: "Convert Word to PDF – Free Word to PDF Converter",
       meta: [
         {
           name: "Keywords",
           content:
-            "PDF to Word, convert PDF to Word, PDF to Word online, PDF to DOCX converter, extract text from PDF, online document conversion",
+            "word to PDF, convert Word to PDF, Word to PDF online, Word to PDF converter, online document conversion, convert DOCX to PDF",
         },
         {
           name: "description",
           content:
-            "Convert PDF to Word documents with precision. Our online PDF to Word converter ensures accurate and efficient conversion, retaining the original formatting.",
+            "Convert Word documents to PDF seamlessly. Our online Word to PDF converter ensures a fast and reliable conversion process, preserving the formatting of your documents.",
         },
         {
           property: "og:description",
           content:
-            "Convert PDF to Word documents with precision. Our online PDF to Word converter ensures accurate and efficient conversion, retaining the original formatting.",
+            "Convert Word documents to PDF seamlessly. Our online Word to PDF converter ensures a fast and reliable conversion process, preserving the formatting of your documents.",
         },
         {
           property: "og:title",
-          content: "Convert PDF to Word – Free PDF to Word Converter",
+          content: "Convert Word to PDF – Free Word to PDF Converter",
         },
       ],
     };
   },
   mixins: [fileHandlingMixin],
   components: {
-    PdfViewer,
     draggable,
-    SelectFileComponent,
     AddMoreDropDown,
     Processing,
+    SelectFileComponent,
     Uploading,
   },
   data() {
     return {
-      show_file_action: null,
       isDragging: false,
       files: [],
       file_objs: [],
       second: false,
+      show_file_action: null,
       page_load: "default",
       progress: 0,
       size: 0,
@@ -189,8 +194,6 @@ export default {
   },
 
   methods: {
-    //click add from local button
-
     handleFiles(files) {
       // Process the dropped files
       for (let i = 0; i < files.length; i++) {
@@ -202,59 +205,18 @@ export default {
       this.file_objs.splice(i, 1);
     },
 
-    //rotate thumbnail
-    setRotationDegree(tagId, index) {
-      const computedStyle = window.getComputedStyle(
-        document.getElementById(tagId)
-      );
-      const transformValue = computedStyle.getPropertyValue("transform");
-
-      // Extract rotation degree from the transform value
-      const matrix = new DOMMatrixReadOnly(transformValue);
-      const rotation = Math.atan2(matrix.b, matrix.a) * (180 / Math.PI) + 90;
-      if (rotation == 360) rotation = 0;
-      document.getElementById(tagId).style.transform = `rotate(${rotation}deg)`;
-
-      //save rotation
-      this.file_objs[index] = {
-        file: this.file_objs[index]["file"],
-        degree: rotation,
-      };
-    },
-
-    makeName(name) {
-      return (
-        name.split(".")[0].substring(0, 3) +
-        "..." +
-        name.split(".")[name.split(".").length - 1]
-      );
-    },
-
-    getURL(file_obj) {
-      const fileSrc = generateURL(file_obj.file);
-      return fileSrc;
-    },
-    async readFileAsync(file) {
-      return new Promise((resolve, reject) => {
-        let reader = new FileReader();
-        reader.onload = () => {
-          resolve(reader.result);
-        };
-        reader.onerror = reject;
-        reader.readAsArrayBuffer(file);
-      });
-    },
-
-    //convertToWord
-    async convertToWord() {
+    async convertToPdf() {
       this.page_load = "uploading";
       const formData = new FormData();
+      let degrees = [];
       for (let i = 0; i < this.file_objs.length; i++) {
         formData.append("files", this.file_objs[i].file);
+        degrees.push(this.file_objs[i].degree);
       }
-
+      console.log(degrees);
+      formData.append("degrees", degrees);
       this.$axios
-        .post("/pdf/pdf_to_word", formData, {
+        .post("/pdf/wordtopdf", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -280,24 +242,21 @@ export default {
           }.bind(this),
         })
         .then((response) => {
-          console.log(response);
-          // Handle response from server
           const type = response.data.split(".")[1];
-          console.log(type);
           const obj = {
             id: response.data,
-            button_title: "Successfully Converted",
-            dis_text: "PDF has been converted!",
+            button_title: "Download Converted PDF",
+            dis_text: "Word has been Converted!",
             down_name: `pdfden_converted.${type}`,
             file_type: `application/${type}`,
             before: "wordtopdf",
           };
+
+          //const encrypted = this.$encrypt(obj);
           const encrypted = this.$crypto.AES.encrypt(
             JSON.stringify(obj),
             "mySecretKey123"
           ).toString();
-          //const encrypted = this.$encrypt(obj);
-
           this.$router.push({
             path: "download",
             // this.$route.params.locale == undefined
@@ -318,14 +277,13 @@ export default {
 </script>
 
 <style scoped>
-.pw-files-list {
+.wp-files-list {
   width: 80%;
   text-align: center;
   position: relative;
   padding: 20px;
-  height: 100vh;
 }
-.pw_tool__sidebar {
+.wp_sidebar {
   width: 20%;
   background-color: #fff;
   width: 20%;
@@ -346,6 +304,7 @@ export default {
   max-height: 95vh;
   overflow-y: auto;
 }
+
 .preview_area {
   display: flex;
 }
@@ -410,6 +369,9 @@ export default {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.word_preview_img {
+  width: 130px;
+}
 
 .add-more {
   width: fit-content;
@@ -424,8 +386,8 @@ export default {
   display: block;
 }
 
-.pw-btn,
-.pw_responsive_btn {
+.wp_btn,
+.wp_responsive_btn {
   font-size: 22px;
   line-height: 26px;
   min-height: 48px;
@@ -439,25 +401,28 @@ export default {
   cursor: pointer;
   margin-top: 100%;
 }
-.pw_responsive_btn {
+.wp_responsive_btn {
   display: none;
 }
 
 h3 {
   font-weight: 500;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 @media (max-width: 640px) {
-  .pw_tool__sidebar {
+  .wp_sidebar {
     display: none;
   }
-  .pw-files-list {
+  .wp-files-list {
     width: 100%;
     padding-left: 17%;
     min-height: 80vh;
   }
 
-  .pw_responsive_btn {
+  .wp_responsive_btn {
     display: block;
     position: absolute;
     top: 200px;

@@ -330,4 +330,7 @@ export default {
   margin-left: 100px;
   margin-top: 100px;
 }
+h3 {
+  border-bottom: 1px solid #ccc !important;
+}
 </style>

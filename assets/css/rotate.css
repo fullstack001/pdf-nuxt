@@ -1,4 +1,3 @@
-
 .option__image {
   cursor: pointer;
   display: -ms-flexbox;
@@ -7,19 +6,23 @@
   margin-right: 10px;
   font-size: 15px;
 }
+
 ul {
   list-style: none;
 }
-.rotate-files-list{
-  width:80%;
+
+.rotate-files-list {
+  width: 80%;
   text-align: center;
 }
+
 .form__group {
   font-size: 20px;
   margin-left: 10px;
   margin-bottom: 20px;
   display: flex;
 }
+
 .option__btn {
   position: relative;
   display: -ms-flexbox;
@@ -43,16 +46,20 @@ ul {
   background: #f5f5fa;
   border-width: 0;
 }
+
 .option__btn:hover {
   border: solid 1px #e76d26;
   color: red;
 }
+
 .option__btn span {
   margin-left: 20px;
 }
+
 .option__actions {
   margin: auto;
 }
+
 .option__btn__icon {
   padding: 12px;
   width: 55px;
@@ -65,16 +72,19 @@ ul {
   color: white;
   font-size: 20px;
 }
+
 .float-right {
   margin-left: 70px;
   color: red;
   cursor: pointer;
 }
+
 .option {
   -webkit-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
+
 .option__title {
   font-weight: 500;
   color: #33333b;
@@ -82,26 +92,29 @@ ul {
   text-align: left;
   font-size: 20px;
 }
+
 .option__image__item {
-    padding: 18px 20px;
-    position: relative;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    width: 30%;
-    text-align: center;
-    color: #85858e;
-    display: block;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin: 6px;
-    background: #f5f5fa;
-    border-radius: 8px;
-    border: 2px solid rgba(0, 0, 0, 0);
+  padding: 18px 20px;
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 30%;
+  text-align: center;
+  color: #85858e;
+  display: block;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  background: #f5f5fa;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0);
 }
+
 .option__image__item svg {
   margin: auto;
   margin-bottom: 20px;
 }
+
 .option__image__item.option--active {
   color: #ff7c03;
   border: 2px solid #ff7c03;
@@ -116,6 +129,7 @@ ul {
 .preview_area {
   display: flex;
 }
+
 .preview-card {
   cursor: grab;
   flex: 1 1;
@@ -137,9 +151,11 @@ ul {
 .preview-card:visited {
   border: dotted 2px #e76d26;
 }
+
 .preview_img {
   margin-top: 40px;
 }
+
 .preview-img {
   width: 140px;
   height: 180px;
@@ -156,6 +172,7 @@ ul {
   /* display: none; */
   z-index: 100;
 }
+
 .file__btn {
   padding: 3px;
   width: 24px;
@@ -177,7 +194,8 @@ ul {
   justify-content: center;
 }
 
-.rotate_tool_sidebar,.rotate_responsive__sidebar {
+.rotate_tool_sidebar,
+.rotate_responsive__sidebar {
   display: block;
   padding: 0 0 120px;
   overflow-x: hidden;
@@ -189,8 +207,8 @@ ul {
   text-align: center;
 }
 
-h3{
-  margin:20px auto;
+h3 {
+  margin: 20px auto;
   font-weight: 600;
 }
 
@@ -210,7 +228,7 @@ h3{
 
 .option__panel__content {
   margin: 10px;
-  background: #def2ff;
+  background: #DEF2FF;
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
@@ -254,6 +272,7 @@ h3{
 .prew_title {
   word-wrap: break-word;
 }
+
 .badge-container {
   position: relative;
 }
@@ -270,9 +289,11 @@ h3{
   z-index: 1000;
   border: solid 2px #ff7c03;
 }
+
 .responsive-setting {
   display: none;
 }
+
 @media (max-width: 960px) {
   .tools__item {
     -ms-flex-positive: 0;
@@ -282,8 +303,9 @@ h3{
     -ms-flex-preferred-size: calc(33.333% - 4px);
     flex-basis: calc(33.333% - 4px);
   }
- 
+
 }
+
 @media (max-width: 640px) {
   .tools__item {
     -ms-flex-positive: 0;
@@ -293,15 +315,18 @@ h3{
     -ms-flex-preferred-size: calc(50% - 4px);
     flex-basis: calc(50% - 4px);
   }
-  .rotate-files-list{
-    width:100%;
-    padding-left:17%;
+
+  .rotate-files-list {
+    width: 100%;
+    padding-left: 17%;
     min-height: 80vh;
 
   }
-  .rotate_tool_sidebar{
-    display:none
+
+  .rotate_tool_sidebar {
+    display: none
   }
+
   .rotate_responsive__sidebar {
     height: 710px;
     overflow-y: auto;
@@ -313,6 +338,7 @@ h3{
     background-color: rgb(255, 255, 255);
     text-align: center;
   }
+
   .responsive-setting {
     display: block;
     position: absolute;
@@ -323,14 +349,16 @@ h3{
     padding: 6px;
     top: 72px;
   }
-  .add-more{
-    top:120px
+
+  .add-more {
+    top: 120px
   }
+
   .rotate_responsive_btn {
     display: block;
     position: absolute;
     top: 80vh;
     right: 10px;
   }
- 
+
 }

@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="getTo()">
+  <a :href="getTo()" :key="$route.fullPath">
     <slot />
-  </router-link>
+  </a>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <md-content class="">
+  <md-content class="feature_item">
     <LocalizedLink :to="item.item.name">
       <div class="item-header">
         <img :src="require(`@/assets/feature_img/${item.item.file}`)" />
@@ -30,7 +30,7 @@ export default {
   methods: {
     redirect(link) {
       this.$router.push({
-        name: link,
+        pather: link,
       });
     },
   },
@@ -38,6 +38,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.feature_item {
+  height: 100% !important;
+}
+.feature_item:hover {
+  background-color: #f5f5fa !important;
+}
+.feature_item img {
+  transition: transform 0.3s ease;
+}
+
+.feature_item:hover img {
+  transform: scale(1.3); /* Increase size on hover */
+}
 .md-content {
   padding: 24px;
   text-align: center;

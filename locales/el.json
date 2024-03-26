@@ -218,49 +218,49 @@
   },
   "features": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "συγχώνευση",
       "description": "Συνδυάστε αρχεία PDF με τη σειρά που θέλετε με την ευκολότερη διαθέσιμη συγχώνευση PDF",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "διαχωρισμός",
       "description": "Διαχωρίστε μία σελίδα ή ένα ολόκληρο σύνολο για εύκολη μετατροπή σε ανεξάρτητα αρχεία PDF",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Συμπίεση",
       "description": "Μειώστε το μέγεθος του αρχείου ενώ κάνετε βελτιστοποίηση για μέγιστη ποιότητα PDF",
       "file": "compress_pdf.svg"
     },
     "word_pdf": {
-      "name": "wordtopdf",
+      "name": "wordto-pdf",
       "title": "Word σε PDF",
       "description": "Κάντε τα αρχεία DOC και DOCX εύκολα στην ανάγνωση μετατρέποντάς τα σε PDF.",
       "file": "word_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF σε Word",
       "description": "Μετατρέψτε εύκολα τα αρχεία PDF σας σε εύκολα επεξεργάσιμα έγγραφα DOC και DOCX. Το έγγραφο WORD που μετατράπηκε είναι σχεδόν 100% ακριβές.",
       "file": "pdf_word.svg"
     },
     "sign": {
-      "name": "signpdf",
+      "name": "sign-pdf",
       "title": "Υπογραφή",
       "description": "Υπογράψτε εσείς ή ζητήστε ηλεκτρονικές υπογραφές από άλλους.",
       "file": "sign_pdf.svg"
     },
     "edit": {
-      "name": "editpdf",
+      "name": "edit-pdf",
       "title": "Επεξεργασία",
       "description": "Προσθέστε κείμενο, εικόνες, σχήματα ή ελεύθερους σχολιασμούς σε ένα έγγραφο PDF. Επεξεργαστείτε το μέγεθος, τη γραμματοσειρά και το χρώμα του προστιθέμενου περιεχομένου.",
       "file": "edit_pdf.svg"
     },
     "rotate": {
-      "name": "rotatepdf",
+      "name": "rotate-pdf",
       "title": "Περιστροφή",
       "description": "Περιστροφή των PDF σας όπως τα χρειάζεστε. Μπορείτε ακόμη και να περιστρέψετε πολλά PDF ταυτόχρονα!",
       "file": "rotate_pdf.svg"
@@ -268,25 +268,25 @@
   },
   "onlines": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "συγχώνευση",
       "description": "Συνδυάστε αρχεία PDF με τη σειρά που θέλετε με την ευκολότερη διαθέσιμη συγχώνευση PDF",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "διαχωρισμός",
       "description": "Διαχωρίστε μία σελίδα ή ένα ολόκληρο σύνολο για εύκολη μετατροπή σε ανεξάρτητα αρχεία PDF",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Συμπίεση",
       "description": "Μειώστε το μέγεθος του αρχείου ενώ κάνετε βελτιστοποίηση για μέγιστη ποιότητα PDF",
       "file": "compress_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF σε Word",
       "description": "Μετατρέψτε εύκολα τα αρχεία PDF σας σε εύκολα επεξεργάσιμα έγγραφα DOC και DOCX. Το έγγραφο WORD που μετατράπηκε είναι σχεδόν 100% ακριβές.",
       "file": "pdf_word.svg"

@@ -218,49 +218,49 @@
   },
   "features": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Unisci PDF",
       "description": "Combina i PDF nell'ordine desiderato con la fusione PDF più semplice disponibile",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "PDF diviso",
       "description": "Separa una pagina o un intero set per una facile conversione in file PDF indipendenti",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Comprimi PDF",
       "description": "Riduci le dimensioni del file ottimizzando per la massima qualità PDF",
       "file": "compress_pdf.svg"
     },
     "word_pdf": {
-      "name": "wordtopdf",
+      "name": "wordto-pdf",
       "title": "Da Word a PDF",
       "description": "Rendi i file DOC e DOCX facili da leggere convertendoli in PDF.",
       "file": "word_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "Da PDF a Word",
       "description": "Converti facilmente i tuoi file PDF in documenti DOC e DOCX facili da modificare. Il documento WORD convertito è accurato quasi al 100%.",
       "file": "pdf_word.svg"
     },
     "sign": {
-      "name": "signpdf",
+      "name": "sign-pdf",
       "title": "Firma PDF",
       "description": "Firma te stesso o richiedi firme elettroniche ad altri.",
       "file": "sign_pdf.svg"
     },
     "edit": {
-      "name": "editpdf",
+      "name": "edit-pdf",
       "title": "Modifica PDF",
       "description": "Aggiungi testo, immagini, forme o annotazioni a mano libera a un documento PDF. Modifica la dimensione, il carattere e il colore del contenuto aggiunto.",
       "file": "edit_pdf.svg"
     },
     "rotate": {
-      "name": "rotatepdf",
+      "name": "rotate-pdf",
       "title": "Ruota PDF",
       "description": "Ruota i tuoi PDF nel modo in cui ne hai bisogno. Puoi anche ruotare più PDF contemporaneamente!",
       "file": "rotate_pdf.svg"
@@ -268,25 +268,25 @@
   },
   "onlines": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Unisci PDF",
       "description": "Combina i PDF nell'ordine desiderato con la fusione PDF più semplice disponibile",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "PDF diviso",
       "description": "Separa una pagina o un intero set per una facile conversione in file PDF indipendenti",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Comprimi PDF",
       "description": "Riduci le dimensioni del file ottimizzando per la massima qualità PDF",
       "file": "compress_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "Da PDF a Word",
       "description": "Converti facilmente i tuoi file PDF in documenti DOC e DOCX facili da modificare. Il documento WORD convertito è accurato quasi al 100%.",
       "file": "pdf_word.svg"

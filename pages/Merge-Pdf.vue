@@ -38,7 +38,7 @@
       ref="file"
       accept=".pdf"
     />
-    <MergeDesription v-if="!file_objs.length && page_load == 'default'" />
+    <!-- <MergeDesription v-if="!file_objs.length && page_load == 'default'" /> -->
     <div
       class="merge-files-list"
       style="position: relative"
@@ -123,15 +123,14 @@
         v-show="file_objs.length"
         :class="file_objs.length > 1 ? 'fileMore' : 'fileOne'"
       >
-        <a
+        <div
           id="orderByName"
           data-order="asc"
-          href="javascript:;"
           title="Order files by name"
-          data-title="Order files by name"
-          :style="file_objs.length > 1 ? 'display: flex' : 'display:none'"
+          :style="file_objs.length > 1 ? 'display: flex ; ' : 'display:none'"
           @click="sort_pdf"
         >
+          <md-tooltip md-direction="left">Order files by name </md-tooltip>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -164,7 +163,7 @@
               d="M11.212 8.083L14.016.66c.185-.5.53-.66 1.058-.66h.516c.5 0 .926.12 1.164.794l2.62 7.3c.08.212.212.595.212.833 0 .53-.463.952-1.02.952-.476 0-.82-.172-.98-.595l-.556-1.587h-3.5l-.57 1.587c-.146.423-.45.595-.966.595C11.41 9.87 11 9.5 11 8.917c0-.238.132-.622.212-.833zm5.344-1.905l-1.23-3.823H15.3l-1.283 3.823h2.54zm-5.2 13.442l4.908-5.794h-3.783c-.622 0-1.124-.317-1.124-.913S11.86 12 12.482 12h5.715c.556 0 1.005.238 1.005.992a1.21 1.21 0 0 1-.304.78L13.9 19.7h4.233c.622 0 1.124.317 1.124.913s-.503.913-1.124.913h-5.887c-.794 0-1.257-.265-1.257-1.072 0-.344.16-.595.357-.833z"
             ></path>
           </svg>
-        </a>
+        </div>
         <div class="add-more-area">
           <div class="badge-container md-primary" md-content="4">
             <AddMoreDropDown
@@ -236,6 +235,7 @@ import MergeDesription from "@/components/MergeDesription.vue";
 import SvgImage from "@/assets/feature_img/merge_pdf.svg";
 
 export default {
+  layout: "nofooter",
   head() {
     return {
       title: "Merge PDF - Combine PDF Files for Free",
@@ -565,7 +565,7 @@ export default {
 
 .option__panel__content {
   margin: 10px;
-  background: #fefefe;
+  background: #def2ff;
   padding: 10px;
   border-radius: 5px;
   font-size: 13px;
@@ -621,6 +621,9 @@ export default {
   height: 40px;
   margin-left: 58px;
 }
+#orderByName:hover {
+  cursor: pointer;
+}
 
 .prew_title {
   word-wrap: break-word;
@@ -631,6 +634,7 @@ export default {
 h3 {
   font-weight: 500;
   margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 .badge[data-v-3a2b3612] {
   position: absolute;

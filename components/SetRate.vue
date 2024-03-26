@@ -1,7 +1,7 @@
 <template>
   <div id="rateSection" class="section section-4 even tc">
-    <h2 class="title">Please rate this app</h2>
-    <div class="content container">
+    <h2 v-if="!submitedRate" class="title">Please rate this app</h2>
+    <div class="content container" v-if="!submitedRate">
       <div class="stars">
         <star-rating
           :increment="0.5"
@@ -16,11 +16,12 @@
           ]"
           :show-rating="false"
           @rating-selected="setRating"
-        ></star-rating> 
+        ></star-rating>
         <!-- <star-rating v-model="rating" :increment="0.5" :star-size="24"></star-rating> -->
       </div>
       <div>
-        <textarea style="border:1px solid ; border-radius: 5px ;"
+        <textarea
+          style="border: 1px solid; border-radius: 5px"
           name="reviewText"
           placeholder="Your impressions and thoughts. Please rate fairly."
           autocomplete="off"
@@ -37,22 +38,23 @@
         >
           Submit
         </button>
-        <div v-if="submitedRate" style="font-size: 20px; padding-bottom: 20px">
-          Thank you!
-        </div>
       </div>
+
       <!-- <div class="mt3">
         <a class="rightArrow" href="/en/contact">Please report problems here</a>
       </div> -->
     </div>
+    <div v-if="submitedRate" style="font-size: 20px; padding-bottom: 20px">
+      Thank you!
+    </div>
   </div>
 </template>
 <script>
- //import StarRating from "vue-star-rating";
+//import StarRating from "vue-star-rating";
 
 export default {
   components: {
-   // StarRating,
+    // StarRating,
   },
   data: function () {
     return {

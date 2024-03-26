@@ -218,49 +218,49 @@
   },
   "features": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Samenvoegen",
       "description": "Combine PDFs in the order you want with the easiest PDF merger available",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "Splitsen",
       "description": "Separate one page or a whole set for easy conversion into independent PDF files",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Samendrukken",
       "description": "Reduce file size while optimizing for maximal PDF quality",
       "file": "compress_pdf.svg"
     },
     "word_pdf": {
-      "name": "wordtopdf",
+      "name": "wordto-pdf",
       "title": "Word naar PDF",
       "description": "Make DOC and DOCX files easy to read by converting them to PDF.",
       "file": "word_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF naar Word",
       "description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate.",
       "file": "pdf_word.svg"
     },
     "sign": {
-      "name": "signpdf",
+      "name": "sign-pdf",
       "title": "Ondertekenen",
       "description": "Sign yourself or request electronic signatures from others.",
       "file": "sign_pdf.svg"
     },
     "edit": {
-      "name": "editpdf",
+      "name": "edit-pdf",
       "title": "Bewerking",
       "description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content.",
       "file": "edit_pdf.svg"
     },
     "rotate": {
-      "name": "rotatepdf",
+      "name": "rotate-pdf",
       "title": "Draaien",
       "description": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!",
       "file": "rotate_pdf.svg"
@@ -268,25 +268,25 @@
   },
   "onlines": {
     "merge": {
-      "name": "mergepdf",
+      "name": "merge-pdf",
       "title": "Samenvoegen",
       "description": "Combine PDFs in the order you want with the easiest PDF merger available",
       "file": "merge_pdf.svg"
     },
     "split": {
-      "name": "splitpdf",
+      "name": "split-pdf",
       "title": "Splitsen",
       "description": "Separate one page or a whole set for easy conversion into independent PDF files",
       "file": "split_pdf.svg"
     },
     "compress": {
-      "name": "compresspdf",
+      "name": "compress-pdf",
       "title": "Samendrukken",
       "description": "Reduce file size while optimizing for maximal PDF quality",
       "file": "compress_pdf.svg"
     },
     "pdf_word": {
-      "name": "pdftoword",
+      "name": "pdf-to-word",
       "title": "PDF naar Word",
       "description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate.",
       "file": "pdf_word.svg"
