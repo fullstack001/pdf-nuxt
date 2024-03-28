@@ -38,7 +38,6 @@
       ref="file"
       accept=".pdf"
     />
-    <!-- <MergeDesription v-if="!file_objs.length && page_load == 'default'" /> -->
     <div
       class="merge-files-list"
       style="position: relative"
@@ -164,15 +163,14 @@
             ></path>
           </svg>
         </div>
-        <div class="add-more-area">
-          <div class="badge-container md-primary" md-content="4">
-            <AddMoreDropDown
-              :pdfCounts="this.file_objs.length"
-              @open_add_local="open_add_local"
-              @onPickedDropbox="onPickedDropbox"
-              @onPickedGoogleDriver="onPickedGoogleDriver"
-            />
-          </div>
+
+        <div class="badge-container md-primary" md-content="4">
+          <AddMoreDropDown
+            :pdfCounts="this.file_objs.length"
+            @open_add_local="open_add_local"
+            @onPickedDropbox="onPickedDropbox"
+            @onPickedGoogleDriver="onPickedGoogleDriver"
+          />
         </div>
       </div>
     </div>
@@ -232,11 +230,10 @@ import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
 import { fileHandlingMixin } from "@/config/globalMixin.js";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
-// import MergeDesription from "@/components/MergeDesription.vue";
 import SvgImage from "@/assets/feature_img/merge_pdf.svg";
 
 export default {
-  layout: "nofooter",
+  layout: "desiblefooter.vue",
   head() {
     return {
       title: "Merge PDF - Combine PDF Files for Free",
@@ -272,7 +269,6 @@ export default {
     Processing,
     Uploading,
     SelectFileComponent,
-    // MergeDesription,
   },
   data() {
     return {

@@ -45,9 +45,11 @@
               </div>
             </div>
             <div>
-              <nuxt-link class="btn premium_btn" to="/ComingSoon">{{
-                $t("page_titles.landing.section2.button")
-              }}</nuxt-link>
+              <!-- <nuxt-link class="btn premium_btn" to="/ComingSoon"> -->
+              <nuxt-link class="btn premium_btn" to="/">
+                <!-- {{ $t("page_titles.landing.section2.button") }} -->
+                Coming Soon
+              </nuxt-link>
             </div>
           </div>
           <div class="md-layout-item">
