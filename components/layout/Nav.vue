@@ -73,7 +73,7 @@
                 style="padding: 0; position: absolute; right: -140px"
               >
                 <button
-                  class="nav-btn"
+                  class="nav-btn dropdown-btn"
                   md-menu-trigger
                   style="
                     min-width: 38px;
@@ -86,12 +86,12 @@
                 </button>
 
                 <md-speed-dial-content style="z-index: 1000">
-                  <md-button class="nav-btn">
+                  <md-button class="nav-btn dropdown-btn">
                     <LocalizedLink to="word-to-pdf">
                       {{ $t("features.word_pdf.title") }}
                     </LocalizedLink>
                   </md-button>
-                  <md-button class="nav-btn">
+                  <md-button class="nav-btn dropdown-btn">
                     <LocalizedLink to="pdf-to-word">
                       {{ $t("features.pdf_word.title") }}
                     </LocalizedLink>
@@ -148,43 +148,43 @@
       </ul>
       <div :class="{ 'navbar-open': isOpen }">
         <ul class="mobile-nav-list" @mouseleave="isOpen = false">
-          <li>
+          <li :class="{ 'active-link': isActive('/merge-pdf') }">
             <LocalizedLink to="/merge-pdf">
               {{ $t("features.merge.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/split-pdf') }">
             <LocalizedLink to="/split-pdf">
               {{ $t("features.split.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/compress-pdf') }">
             <LocalizedLink to="/compress-pdf">
               {{ $t("features.compress.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/rotate-pdf') }">
             <LocalizedLink to="/rotate-pdf">
               {{ $t("features.rotate.title") }}
             </LocalizedLink>
           </li>
 
-          <li>
-            <LocalizedLink to="/wordto-pdf">
+          <li :class="{ 'active-link': isActive('/word-to-pdf') }">
+            <LocalizedLink to="/word-to-pdf">
               {{ $t("features.word_pdf.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/pdf-to-word') }">
             <LocalizedLink to="/pdf-to-word">
               {{ $t("features.pdf_word.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/sign-pdf') }">
             <LocalizedLink to="/sign-pdf">
               {{ $t("features.sign.title") }}
             </LocalizedLink>
           </li>
-          <li>
+          <li :class="{ 'active-link': isActive('/edit-pdf') }">
             <LocalizedLink to="/edit-pdf">
               {{ $t("features.edit.title") }}
             </LocalizedLink>
@@ -412,6 +412,10 @@ a.nav-btn.nuxt-link-exact-active.nuxt-link-active.active-link:hover {
   color: #fff !important;
   background-color: #ff7c03 !important;
 }
+.dropdown-btn:hover {
+  background-color: #ff7c03 !important;
+  color: #ffffff !important;
+}
 @media (max-width: 1570px) {
   .nav-btn {
     padding: 10px 5px;
@@ -486,12 +490,15 @@ a.nav-btn.nuxt-link-exact-active.nuxt-link-active.active-link:hover {
     font-size: 17px;
     border-radius: 7px;
     box-shadow: 0px 1px 2px 2px #28212145;
-    padding: 10px 20px;
     font-weight: 500;
     z-index: 999;
+    padding-top: 10px;
   }
   .mobile-nav-list li {
-    margin: 15px 0;
+    padding: 10px 15px;
+  }
+  .mobile-nav-list li:hover {
+    background-color: #ff7c03;
   }
 
   .nav-btn {

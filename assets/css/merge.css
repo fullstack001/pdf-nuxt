@@ -71,10 +71,9 @@
   justify-content: center;
 }
 
-
 .merge__sidebar {
   text-align: center;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   max-width: 20% !important;
   min-width: 20px !important;
@@ -95,17 +94,16 @@
 }
 
 .add-more .fileOne {
-  right: 30px
+  right: 30px;
 }
 
 .add-more .fileMore {
-  right: 100px
+  right: 100px;
 }
-
 
 .option__panel__content {
   margin: 10px;
-  background: #DEF2FF;
+  background: #def2ff;
   padding: 10px;
   border-radius: 5px;
   font-size: 13px;
@@ -127,8 +125,6 @@
   cursor: pointer;
 }
 
-
-
 #pickfiles {
   display: block;
   background-color: #ff7c03;
@@ -140,9 +136,6 @@
   cursor: pointer;
 }
 
-
-
-
 #orderByName {
   margin-top: 20px;
   background-color: #fff;
@@ -152,7 +145,6 @@
   height: 40px;
   margin-left: 50px;
 }
-
 
 .prew_title {
   word-wrap: break-word;
@@ -182,11 +174,11 @@ h3 {
 
 @media (max-width: 991px) {
   .merge__sidebar {
-    display: none
+    display: none;
   }
 
   .add-more {
-    right: 30px !important
+    right: 30px !important;
   }
 
   .merge-files-list {

@@ -201,7 +201,7 @@ ul {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   min-width: 400px;
   text-align: center;
@@ -211,7 +211,6 @@ h3 {
   margin: 20px auto;
   font-weight: 600;
 }
-
 
 .add-more {
   width: fit-content;
@@ -228,7 +227,7 @@ h3 {
 
 .option__panel__content {
   margin: 10px;
-  background: #DEF2FF;
+  background: #def2ff;
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
@@ -253,8 +252,6 @@ h3 {
   cursor: pointer;
   margin-top: 150px;
 }
-
-
 
 .tools__item {
   background: #fff;
@@ -303,7 +300,6 @@ h3 {
     -ms-flex-preferred-size: calc(33.333% - 4px);
     flex-basis: calc(33.333% - 4px);
   }
-
 }
 
 @media (max-width: 640px) {
@@ -320,11 +316,10 @@ h3 {
     width: 100%;
     padding-left: 17%;
     min-height: 80vh;
-
   }
 
   .rotate_tool_sidebar {
-    display: none
+    display: none;
   }
 
   .rotate_responsive__sidebar {
@@ -351,7 +346,7 @@ h3 {
   }
 
   .add-more {
-    top: 120px
+    top: 120px;
   }
 
   .rotate_responsive_btn {
@@ -360,5 +355,4 @@ h3 {
     top: 80vh;
     right: 10px;
   }
-
 }

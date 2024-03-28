@@ -135,7 +135,7 @@ export default {
 @media (max-width: 640px) {
   .language-panel {
     width: 324px;
-    top: -210px;
+    top: -380px;
   }
   .language-panel .md-layout-item {
     padding: 10px;

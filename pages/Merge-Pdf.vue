@@ -187,10 +187,10 @@
 
       <div class="option__panel option__panel--active" id="merge-options">
         <div class="option__panel__content">
-          <div class="info drag" v-show="file_objs.length == 1">
+          <div class="info drag" v-show="file_objs.length > 1">
             {{ $t("page_titles.merge_page.one_des") }}
           </div>
-          <div class="info multiple" v-show="file_objs.length > 1">
+          <div class="info multiple" v-show="file_objs.length == 1">
             {{ $t("page_titles.merge_page.more_des") }}
             <br />
             {{ $t("page_titles.merge_page.more_des_a") }}
@@ -202,6 +202,7 @@
         <button
           class="Merge__btn"
           @click="mergePDFs"
+          :style="file_objs.length == 1 ? 'opacity: 0.4' : 'opacity: 1'"
           :disabled="file_objs.length == 1"
         >
           {{ $t("page_titles.merge_page.actionBtn") }}
@@ -231,7 +232,7 @@ import Processing from "@/components/Processing.vue";
 import Uploading from "@/components/Uploading.vue";
 import { fileHandlingMixin } from "@/config/globalMixin.js";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
-import MergeDesription from "@/components/MergeDesription.vue";
+// import MergeDesription from "@/components/MergeDesription.vue";
 import SvgImage from "@/assets/feature_img/merge_pdf.svg";
 
 export default {
@@ -271,7 +272,7 @@ export default {
     Processing,
     Uploading,
     SelectFileComponent,
-    MergeDesription,
+    // MergeDesription,
   },
   data() {
     return {
@@ -363,7 +364,6 @@ export default {
             return 0;
           }
         });
-        console.log(temp);
       } else {
         this.file_objs.reverse();
       }
@@ -538,7 +538,7 @@ export default {
 
 .merge__sidebar {
   text-align: center;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   max-width: 20% !important;
   min-width: 20px !important;

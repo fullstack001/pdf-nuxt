@@ -1,16 +1,17 @@
 <template>
   <div>
     <div v-if="isLoading"></div>
-    <div v-else>
+    <div v-else class="non-footer">
       <Nav />
       <nuxt />
+      <SmartFooter />
     </div>
   </div>
 </template>
 
 <script>
 import Nav from "@/components/layout/Nav.vue";
-import Footer from "@/components/layout/Footer.vue";
+import SmartFooter from "@/components/layout/SmartFooter.vue";
 import EventBus from "@/config/EventBus";
 
 export default {
@@ -49,7 +50,7 @@ export default {
   // },
   components: {
     Nav,
-    Footer,
+    SmartFooter,
   },
   beforeDestroy() {
     window.removeEventListener("beforeunload", this.handleBeforeUnload);
@@ -196,6 +197,9 @@ body {
 
 .md-list-item {
   margin-left: 0 !important;
+}
+.non-footer {
+  color: #000000;
 }
 
 @media (max-width: 991px) {

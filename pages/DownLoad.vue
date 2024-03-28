@@ -104,26 +104,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="rate-secttion">
-      <div class="block__container">
-        <div class="description-title">
-          {{ $t("page_titles.merge_page.rateSection.title") }}
-        </div>
-        <div class="rate-star"> 
-          <span class="material-icons">star</span>
-          <span class="material-icons">star</span>
-          <span class="material-icons">star</span>
-          <span class="material-icons">star</span>
-          <span class="material-icons">star_outline</span>
-        </div>
-        <div class="rate-reviews">
-          <span class="rate-score"> 4.8/5 - </span>
-          <span class="rate-votes">
-            254956 {{ $t("page_titles.merge_page.rateSection.vote") }}
-          </span>
-        </div>
-      </div>
-    </div> -->
+
     <md-dialog-alert
       :md-active.sync="show_noti"
       md-content="PDF file  has been deleted!"
@@ -427,7 +408,7 @@ export default {
     },
     go_merge() {
       this.$router.push({
-        path: "mergepdf",
+        path: "merge-pdf",
         params: {
           file: this.files,
         },
@@ -436,7 +417,7 @@ export default {
     go_split() {
       if (this.file_type == "application/pdf") {
         this.$router.push({
-          path: "splitpdf",
+          path: "split-pdf",
           params: {
             file: this.files,
           },
@@ -445,7 +426,7 @@ export default {
     },
     go_compress() {
       this.$router.push({
-        path: "compresspdf",
+        path: "compress-pdf",
         params: {
           file: this.files,
         },
@@ -453,7 +434,7 @@ export default {
     },
     go_convert() {
       this.$router.push({
-        path: "pdftoword",
+        path: "pdf-to-word",
         params: {
           file: this.files,
         },

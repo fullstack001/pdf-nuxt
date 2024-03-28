@@ -330,7 +330,7 @@ export default {
   width: 20%;
   background-color: #fff;
   width: 20%;
-  height: 100vh;
+  height: 89vh;
   text-align: center;
 }
 .file-label {

@@ -143,6 +143,7 @@ import SvgImage from "@/assets/feature_img/word_pdf.svg";
 import SelectFileComponent from "@/components/SelectFileComponent.vue";
 
 export default {
+  layout: "nofooter",
   head() {
     return {
       title: "Convert Word to PDF – Free Word to PDF Converter",
@@ -287,7 +288,7 @@ export default {
   width: 20%;
   background-color: #fff;
   width: 20%;
-  height: 100vh;
+  height: 89vh;
   text-align: center;
 }
 .file-label {

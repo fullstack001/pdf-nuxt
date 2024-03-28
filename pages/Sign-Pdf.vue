@@ -270,7 +270,7 @@ export default {
 }
 
 .tool__sidebar {
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   min-width: 300px;
 }

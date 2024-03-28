@@ -602,7 +602,7 @@ export default {
 }
 
 .split_tool__sidebar {
-  min-height: 100vh;
+  min-height: 89vh;
   min-width: 20%;
   max-width: 20%;
   text-align: center;

@@ -77,12 +77,13 @@ export default {
 <style scoped>
 .dropzone-container {
   width: 100%;
-  min-height: 100vh;
-  padding: 1rem 0rem;
+  min-height: 89vh;
+  padding: 1rem 0rem 0rem;
   text-align: center;
 }
 .upload_btn_area {
   position: relative;
+  height: 82vh;
 }
 
 .page-title {
@@ -153,6 +154,9 @@ export default {
 @media only screen and (max-width: 991px) {
   .dropzone-container {
     min-height: 55vh;
+  }
+  .upload_btn_area {
+    height: 88vh;
   }
 
   .page-title {

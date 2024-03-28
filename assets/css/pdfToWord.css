@@ -1,16 +1,15 @@
-
-.pw-files-list{
+.pw-files-list {
   width: 80%;
   text-align: center;
   position: relative;
   padding: 20px;
   height: 100vh;
 }
-.pw_tool__sidebar{
-  width:20%;
+.pw_tool__sidebar {
+  width: 20%;
   background-color: #fff;
   width: 20%;
-  height: 100vh;
+  height: 89vh;
   text-align: center;
 }
 .file-label {
@@ -92,7 +91,6 @@
   justify-content: center;
 }
 
-
 .add-more {
   width: fit-content;
   position: absolute;
@@ -106,7 +104,8 @@
   display: block;
 }
 
-.pw-btn, .pw_responsive_btn {
+.pw-btn,
+.pw_responsive_btn {
   font-size: 22px;
   line-height: 26px;
   min-height: 48px;
@@ -118,21 +117,18 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  margin-top:100%
+  margin-top: 100%;
 }
-.pw_responsive_btn{
+.pw_responsive_btn {
   display: none;
 }
-
 
 h3 {
   font-weight: 500;
 }
 
-
-
 @media (max-width: 640px) {
-  .pw_tool__sidebar{
+  .pw_tool__sidebar {
     display: none;
   }
   .pw-files-list {
@@ -140,7 +136,7 @@ h3 {
     padding-left: 17%;
     min-height: 80vh;
   }
-  
+
   .pw_responsive_btn {
     display: block;
     position: absolute;

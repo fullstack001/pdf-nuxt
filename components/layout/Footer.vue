@@ -177,6 +177,10 @@ export default {
   .footer-social {
     top: 20px;
   }
+  .copyright {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 @media (min-width: 992px) {

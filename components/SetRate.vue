@@ -44,8 +44,11 @@
         <a class="rightArrow" href="/en/contact">Please report problems here</a>
       </div> -->
     </div>
-    <div v-if="submitedRate" style="font-size: 20px; padding-bottom: 20px">
-      Thank you!
+    <div
+      v-if="submitedRate"
+      style="font-size: 45px; padding-top: 60px; line-height: normal"
+    >
+      Thank you for you review!
     </div>
   </div>
 </template>
@@ -89,6 +92,7 @@ export default {
 #rateSection {
   padding-top: 20px;
   background: #fefefe;
+  min-height: 320px;
 }
 .container {
   width: 1270px;

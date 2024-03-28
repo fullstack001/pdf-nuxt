@@ -1,4 +1,3 @@
-
 .md-badge {
   position: absolute;
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -18,10 +17,9 @@
   z-index: 6;
   background: green !important;
 }
-.split-files-list{
-  width:80%
+.split-files-list {
+  width: 80%;
 }
-
 
 .preview-container {
   position: relative;
@@ -63,11 +61,8 @@
   background-color: #a2a2a2;
 }
 
-
-
-
 .split_tool__sidebar {
-  min-height:100vh ;
+  min-height: 89vh;
   min-width: 20%;
   max-width: 20%;
   text-align: center;
@@ -84,7 +79,6 @@
   background-color: lightblue;
   cursor: move;
 }
-
 
 .option__panel__content {
   margin: 10px;
@@ -122,7 +116,6 @@
   border-radius: 50%;
   cursor: pointer;
 }
-
 
 .range__container {
   margin: 12px;
@@ -166,40 +159,35 @@ h3 {
   color: #ff7c03 !important;
 }
 
-.range_btn{
+.range_btn {
   padding: 5px 0px;
   font-size: 14px;
-  margin: 10px 10px;  
+  margin: 10px 10px;
   border-radius: 10px;
   color: #f5f5fa !important;
   font-weight: 500;
   background-color: #fefefe !important;
 }
 
-
-.range_btn .active_btn{
+.range_btn .active_btn {
   background-color: #ff7c03 !important;
 }
 
-.active_btn{
+.active_btn {
   background-color: #ff7c03 !important;
 }
 
-
-
-.active_btn .md-button-content{
+.active_btn .md-button-content {
   color: #fff !important;
 }
 
-.range_btn:hover .md-button-content{
-  color: #fff !important
+.range_btn:hover .md-button-content {
+  color: #fff !important;
 }
-
 
 .md-button-content:hover,
 .md-button-content:focus,
-.md-button-content:active
- {
+.md-button-content:active {
   color: #fff !important;
 }
 
@@ -225,19 +213,19 @@ h3 {
 #merge-options {
   padding-bottom: 30px;
 }
-.responsive-setting{
+.responsive-setting {
   display: none;
 }
 
 @media (max-width: 640px) {
- .split-files-list{
-  width:100%
-}
-.split_tool__sidebar{
-  display: none;
-}
-.responsive-setting{
-      display: block;
+  .split-files-list {
+    width: 100%;
+  }
+  .split_tool__sidebar {
+    display: none;
+  }
+  .responsive-setting {
+    display: block;
     position: absolute;
     font-size: 26px;
     background-color: #fff;
@@ -246,6 +234,5 @@ h3 {
     padding: 6px;
     top: 72px;
     right: 20px;
-}
-
+  }
 }

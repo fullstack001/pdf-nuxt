@@ -1,4 +1,3 @@
-
 .main {
   flex-grow: 1;
   align-items: center;
@@ -27,7 +26,7 @@
 
 .dropzone-container {
   width: 100%;
-  height: 100vh;
+  height: 89vh;
   padding: 1rem;
 }
 .drop-area {
@@ -111,7 +110,7 @@
 }
 
 .tool__sidebar {
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   min-width: 300px;
 }
@@ -179,8 +178,6 @@
   cursor: pointer;
 }
 
-
-
 .add-more .md-icon-button:hover {
   background-color: #ff7c03 !important;
 }
@@ -212,7 +209,7 @@ h3 {
     min-width: auto;
   }
 
-  .page-title{
+  .page-title {
     font-size: 26px !important;
   }
 }

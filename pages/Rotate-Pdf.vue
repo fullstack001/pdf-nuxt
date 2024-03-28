@@ -1217,7 +1217,7 @@ ul {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   text-align: center;
 }
