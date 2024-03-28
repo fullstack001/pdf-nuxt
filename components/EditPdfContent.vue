@@ -293,10 +293,12 @@ export default {
   height: min-content;
   overflow-y: auto;
   padding-top: 50px;
+  height: 84vh;
 }
 
 #pdf-edit-list {
-  height: 95vh;
+  min-height: 84vh;
+  max-height: 84vh;
   width: 100%;
   overflow-y: auto;
   padding-top: 50px;
@@ -304,8 +306,11 @@ export default {
 .edit_tool_sidebar {
   min-width: 21%;
   max-width: 21%;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
+}
+.description {
+  padding: 15px;
 }
 .option__panel__content {
   margin: 10px;

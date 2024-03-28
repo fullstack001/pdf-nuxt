@@ -983,9 +983,11 @@ img {
   height: min-content;
   overflow-y: auto;
   padding-top: 50px;
+  height: 84vh;
 }
 #pdf-edit-list {
-  height: 95vh;
+  min-height: 84vh;
+  max-height: 84vh;
   width: 100%;
   overflow-y: auto;
   padding-top: 50px;
@@ -993,7 +995,7 @@ img {
 .sign_sidebar {
   min-width: 21%;
   max-width: 21%;
-  height: 100vh;
+  height: 89vh;
   background-color: #fff;
   padding-top: 30px;
 }
