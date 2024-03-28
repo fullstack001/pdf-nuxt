@@ -163,18 +163,18 @@
             ></path>
           </svg>
         </div>
-
-        <div class="badge-container md-primary" md-content="4">
-          <AddMoreDropDown
-            :pdfCounts="this.file_objs.length"
-            @open_add_local="open_add_local"
-            @onPickedDropbox="onPickedDropbox"
-            @onPickedGoogleDriver="onPickedGoogleDriver"
-          />
+        <div class="add-more-area">
+          <div class="badge-container md-primary" md-content="4">
+            <AddMoreDropDown
+              :pdfCounts="this.file_objs.length"
+              @open_add_local="open_add_local"
+              @onPickedDropbox="onPickedDropbox"
+              @onPickedGoogleDriver="onPickedGoogleDriver"
+            />
+          </div>
         </div>
       </div>
     </div>
-
     <div
       class="merge__sidebar"
       style="overflow-y: auto"
@@ -207,6 +207,7 @@
         </button>
       </div>
     </div>
+
     <button
       v-show="file_objs.length > 0"
       class="Merge_responsive_btn"
@@ -233,7 +234,7 @@ import SelectFileComponent from "@/components/SelectFileComponent.vue";
 import SvgImage from "@/assets/feature_img/merge_pdf.svg";
 
 export default {
-  layout: "desiblefooter.vue",
+  layout: "nofooter",
   head() {
     return {
       title: "Merge PDF - Combine PDF Files for Free",
@@ -285,11 +286,22 @@ export default {
   },
   mounted() {
     if (this.$route.params.file) {
-      console.log(this.$route.params.file);
       this.file_objs = this.$route.params.file.map(async (file) => {
         let pageNum = await getPageNumber(files[i]);
         return { file: file, degree: 0, page: pageNum };
       });
+    }
+
+    // Find all elements with class name "smart-footer"
+    const smartFooters = document.querySelectorAll(".smart-footer");
+
+    // Check if there are any elements found
+    if (smartFooters.length > 0) {
+      // Get the last smart-footer element
+      const lastSmartFooter = smartFooters[smartFooters.length - 1];
+
+      // Hide the last smart-footer element
+      lastSmartFooter.style.display = "none";
     }
   },
 
